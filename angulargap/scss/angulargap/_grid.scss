@@ -1,0 +1,84 @@
+// Variables
+//------------------------------------------------------
+
+$grid-padding:             10px !default;
+
+$grid-values:              (('1of10', 10%), ('1of5', 20%), ('1of4', 25%), ('1of3', 33.3333%), ('1of2', 50%), ('2of3', 66.6666%), ('3of4', 75%), ('4of5', 80%), ('9of10', 90%)) !default; 
+
+
+// Mixins
+//------------------------------------------------------
+
+@mixin calc-grid($type: false, $values: $grid-values) {
+  @each $value in $values {
+    $name:  nth($value, 1);
+    $width: nth($value, 2);
+    @if $type {
+      @at-root #{&}-#{$type}--#{$name} {
+        margin-left: $width;
+      } 
+    } @else {
+      @at-root #{&}--#{$name} {
+        @include flex($fg: 0, $fs: 0, $fb: $width);
+        max-width: $width;
+      }
+    }
+  }
+}
+
+// Exports
+//------------------------------------------------------
+
+@include exports("grid") {
+
+  /**
+   * grid
+   * Using flexbox for the grid, inspired by Philip Walton:
+   * https://github.com/philipwalton/solved-by-flexbox
+   */
+  .grid, .col {
+    padding: ($grid-padding / 2);
+    width: 100%; 
+  }
+
+  .grid {
+    @include display($value: flex);
+
+    @at-root #{&} + #{&} {
+      margin-top: ($grid-padding / 2) * -1;
+      padding-top: 0;       
+    }
+
+    @include modifiers($name: top) {
+      @include flex-align($value: flex-start);
+    }
+    @include modifiers($name: bottom) {
+      @include flex-align($value: flex-end);
+    }
+    @include modifiers($name: center) {
+      @include flex-align($value: center);
+    }
+  }
+
+  .col {
+    @include flex($fg: 1);
+    @include display($value: block);
+
+    @include modifiers($name: top) {
+      @include align-self($value: flex-start);
+    }
+    @include modifiers($name: bottom) {
+      @include align-self($value: flex-end);
+    }
+    @include modifiers($name: center) {
+      @include align-self($value: center);
+    }
+
+    @include calc-grid($type: false, $values: $grid-values);
+    @include calc-grid($type: offset, $values: $grid-values);
+
+  }
+
+}
+
+

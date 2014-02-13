@@ -1,0 +1,42 @@
+// Variables
+//------------------------------------------------------
+$card-background-color:    $global-white !default;
+$card-radius:              $global-radius !default;
+
+$card-margin:              15px 15px 0 !default;
+$card-border-width:        1px !default;
+
+$card-item-padding:        15px !default;
+
+// Exports
+//------------------------------------------------------
+
+@include exports("card") {
+
+  /**
+   * card
+   * --------------------------------------------------
+   */
+  .card {
+  	margin: $card-margin;
+  	@include border($width: $card-border-width, $style: solid, $color: lighten($list-default, 30%), $type: all);
+  	@include radius($type: border-radius, $value: $card-radius);
+  	background-color: $card-background-color;
+
+    @include elements($name: item) {
+      padding: $card-item-padding;
+    }
+
+    &.list .list__item:first-child {
+      @include radius($type: border-top-left-radius, $value: $card-radius); 
+      @include radius($type: border-top-right-radius, $value: $card-radius); 
+    }
+
+    &.list .list__item:last-child {
+      @include radius($type: border-bottom-left-radius, $value: $card-radius); 
+      @include radius($type: border-bottom-right-radius, $value: $card-radius); 
+      border-bottom: none;
+    }
+  }
+
+}

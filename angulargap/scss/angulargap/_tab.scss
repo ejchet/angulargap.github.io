@@ -1,0 +1,92 @@
+// Variables
+//------------------------------------------------------
+$tab-font-color:               $global-gray !default;
+$tab-font-color-active:        $global-blue !default;
+$tab-font-size:                $global-font-size !default;
+$tab-font-align:               center !default;
+$tab-line-height:              44px !default;
+
+$tab-full-width:               100% !default;
+$tab-full-height:              100% !default;
+$tab-vertical-align:           middle !default;
+$tab-text-decoration:          none !default;
+
+$tab-item-max-width:           150px !default;
+$tab-item-font-size:           12px !default;
+$tab-item-height:              44px !default;
+$tab-item-line-height:         $tab-item-font-size + 2 !default;
+
+$tab-icon-size:                28px !default;
+$tab-icon-center:              0 auto !default;
+$tab-icon-line-height:         $tab-icon-size !default;
+
+// Mixins
+//------------------------------------------------------
+
+
+// Exports
+//------------------------------------------------------
+
+@include exports("tab") {
+
+  /**
+   * tab
+   * --------------------------------------------------
+   */
+  .tab {
+    @include display($value: flex);
+    width: $tab-full-width;
+    height: $tab-full-height;
+
+    @include elements($name: item) {
+      @include flex($fg: 1, $fs: null, $fb: null);
+      @include display($value: block);
+      @include ellipsis();
+      text-align: $tab-font-align;
+      vertical-align: $tab-vertical-align;
+      max-width: $tab-item-max-width;
+      height: $tab-full-height; 
+      line-height: $tab-line-height;
+      color: $tab-font-color;
+
+      &:hover {
+        text-decoration: $tab-text-decoration;
+      }
+      &:active,
+      &.active {
+        color: $tab-font-color-active;
+      }
+    }
+
+    & .icon {
+      margin: $tab-icon-center;
+      font-size: $tab-icon-size;
+      width: $tab-icon-size;
+      height: $tab-icon-size;
+    }
+
+    @include modifiers(iconTop) {
+      & .tab__item {
+        font-size: $tab-item-font-size;
+        line-height: $tab-item-line-height;
+      }
+      & .icon {
+        @include display($value: block);
+        line-height: $tab-icon-line-height;
+      }
+    }
+
+    @include modifiers(iconLeft) {
+      & .tab__item {
+        font-size: $tab-item-font-size;
+        height: $tab-item-height;
+      }
+      & .icon {
+        @include display($value: inline-block);
+      }
+    }
+  }
+
+}
+
+

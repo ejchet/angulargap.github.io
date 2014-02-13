@@ -1,0 +1,217 @@
+// Variables
+//------------------------------------------------------
+$list-bgcolor:                     $global-white !default;
+$list-default:                     $global-gray !default;
+
+$list-font-size:                   $global-font-size !default;
+$list-font-color:                  $global-black !default;
+$list-font-weight:                 $global-font-weight !default;
+
+$list-text-decoration:             none !default;
+
+$list-item-border-width:           1px !default;
+$list-item-zindex:                 2 !default;
+$list-item-padding:                15px !default;
+
+$list-button-font-size:            14px !default;
+$list-button-icon-font-size:       16px !default;
+$list-button-padding:              0 $list-button-font-size / 3 !default;
+$list-button-height:               32px !default;
+$list-button-min-height:           $list-button-height - 1 !default;
+$list-button-line-height:          $list-button-height - 2 !default;
+
+$list-icon-font-size:              32px !default;
+$list-icon-height:                 $global-full-height !default;
+
+$list-arrow-font-size:             20px !default;
+
+$list-note-float:                  right !default;
+$list-note-height:                 50px !default;
+$list-note-line-height:            $list-note-height !default;
+
+$list-divider-padding:             $list-item-padding / 3 $list-item-padding !default;
+
+$list-icon-padding-left:           50px !default;
+$list-icon-padding-right:          $list-icon-padding-left - 10 !default;
+
+$list-avatar-padding-left:         65px !default;
+$list-avatar-image-radius:         $global-radius !default;
+$list-avatar-image-width:          $global-full-width !default;
+$list-avatar-image-max-width:      40px !default;
+$list-avatar-image-max-height:     $list-avatar-image-max-width !default;
+$list-avatar-font-size:            $global-font-size !default;
+$list-avatar-title-font-size:      $global-font-size + 2 !default;
+
+$list-thumbnail-padding-left:      105px !default;
+$list-thumbnail-min-height:        111px !default;
+$list-thumbnail-image-max-width:   80px !default;
+$list-thumbnail-image-max-height:  $list-thumbnail-image-max-width !default;
+
+$list-checkbox-hidden:             0 !default;
+$list-checkbox-text-indent:        -10000px !default;
+$list-checkbox-font-weight:        normal !default;
+
+
+// Mixins
+//------------------------------------------------------
+
+// Exports
+//------------------------------------------------------
+
+@include exports("list") {
+
+  /**
+   * list
+   * --------------------------------------------------
+   */
+
+  .list {
+    @include position($position: relative, $top: false, $right: false, $bottom: false, $left: false);
+
+    @include elements($name: item) {
+      @include position($position: relative, $top: false, $right: false, $bottom: false, $left: false);
+      z-index: $list-item-zindex;
+      @include display($value: block);
+      padding: $list-item-padding;
+      @include border($width: $list-item-border-width, $style: solid, $color: lighten($list-default, 30%), $type: bottom);
+      font-size: $list-font-size;
+      color: lighten($list-font-color, 20%);
+      background-color: $list-bgcolor;
+
+      &.input-insert {
+        @include display($value: flex);
+        @include flex-align($value: center);
+        @include position($position: relative, $top: false, $right: false, $bottom: false, $left: false);
+      }
+
+      & a {
+        color: $list-font-color;
+        @include display($value: block);
+      }
+
+      &:hover,
+      & a:hover {
+        text-decoration: $list-text-decoration;
+      }
+
+      & .button {
+        @include position($position: absolute, $top: $list-item-padding - 5, $right: $list-item-padding, $bottom: false, $left: false);
+        padding: $list-button-padding;
+        font-size: $list-button-font-size;
+        min-height: $list-button-min-height;
+        height: $list-button-height;
+        line-height: $list-button-line-height;
+
+        & .icon {
+          font-size: $list-button-icon-font-size;
+        }
+      }
+
+      & .icon:first-child,
+      & .icon:last-of-type {
+        @include display($value: flex);
+        @include flex-align($value: center);
+        @include position($position: absolute, $top: 0, $right: false, $bottom: false, $left: false);
+        font-size: $list-icon-font-size;
+        height: $list-icon-height;
+      }
+      & .icon:first-child {
+        @include position($position: false, $top: 0, $right: false, $bottom: false, $left: $list-item-padding);
+      }
+      & .icon:last-child {
+        @include position($position: false, $top: 0, $right: $list-item-padding, $bottom: false, $left: auto);
+      }
+
+      & .toggle {
+        @include position($position: absolute, $top: $list-item-padding / 2 + 1, $right: $list-item-padding, $bottom: false, $left: false);
+      }
+    }
+
+    & a.list__item:active,
+    & a.list__item.active {
+      background-color: lighten($list-default, 40%);
+    }
+
+    & .icon__arrow {
+      font-size: $list-arrow-font-size !important;
+      color: lighten($list-default, 10%);
+    }
+
+    & .item__note {
+      @include position($position: relative, $top: $list-item-padding * -1, $right: false, $bottom: false, $left: false);
+      float: $list-note-float;
+      color: lighten($list-default, 10%);
+      height: $list-note-height;
+      line-height: $list-note-line-height;
+    }
+
+    & .item--divider,
+    & .item--divider:active {
+      padding: $list-divider-padding !important;
+      font-weight: $list-font-weight;
+      background-color: lighten($list-default, 30%);
+    }
+
+    @include modifiers($name: icon) {
+      & .list__item {
+        padding-left: $list-icon-padding-left;
+        padding-right: $list-icon-padding-right;
+      }
+    }
+
+    @at-root #{&}--avatar #{&}__item {
+      padding-left: $list-avatar-padding-left;
+    }
+    @at-root #{&}--thumbnail #{&}__item {
+      padding-left: $list-thumbnail-padding-left;
+      min-height: $list-thumbnail-min-height;
+    }
+    @at-root #{&}--avatar #{&}__item img:first-child,
+    #{&}--thumbnail #{&}__item img:first-child {
+      @include position($position: absolute, $top: $list-item-padding, $right: false, $bottom: false, $left: $list-item-padding);
+      width: $list-avatar-image-width;
+      @include radius($type: border-radius, $value: $list-avatar-image-radius);
+    }
+    @at-root #{&}--avatar #{&}__item img:first-child {
+      max-width: $list-avatar-image-max-width;
+      max-height: $list-avatar-image-max-height;
+    }
+    @at-root #{&}--thumbnail #{&}__item img:first-child {
+      max-width: $list-thumbnail-image-max-width;
+      max-height: $list-thumbnail-image-max-height;
+    }
+    @at-root #{&}--avatar #{&}__item h2,
+    #{&}--thumbnail #{&}__item h2 {
+      font-weight: $list-font-weight;
+      font-size: $list-avatar-title-font-size;
+    }
+    @at-root #{&}--avatar #{&}__item p,
+    #{&}--thumbnail #{&}__item p {
+      font-size: $list-avatar-font-size;
+      color: lighten($list-default, 10%);
+    }
+
+    @at-root #{&}--checkbox #{&}__item input[type="checkbox"],
+    #{&}--radio #{&}__item input[type="radio"] {
+      margin: $list-checkbox-hidden;
+      padding: $list-checkbox-hidden;
+      width: $list-checkbox-hidden;
+      height: $list-checkbox-hidden;
+      @include opacity($opacity: 0, $filter: true);
+      text-indent: $list-checkbox-text-indent;
+    }
+    @at-root #{&}--checkbox #{&}__item label,
+    #{&}--radio #{&}__item label {
+      @include display($value: block);
+      font-weight: $list-checkbox-font-weight;
+    }
+    @at-root #{&}--checkbox #{&}__item .icon.handle,
+    #{&}--radio #{&}__item .icon.handle {
+      @include display($value: none);
+    }
+    @at-root #{&}--checkbox #{&}__item input[type="checkbox"]:checked + .icon.handle,
+    #{&}--radio #{&}__item input[type="radio"]:checked + .icon.handle {
+      @include display($value: block);
+    }
+  }
+}

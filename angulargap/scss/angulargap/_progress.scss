@@ -1,0 +1,50 @@
+// Variables
+//------------------------------------------------------
+$progress-default:                 $global-gray !default;
+$progress-primary:                 $global-blue !default;
+$progress-success:                 $global-green !default;
+$progress-important:               $global-red !default;
+$progress-type-colors:             $progress-primary $progress-success $progress-important !default;
+
+$progress-font-color:              $global-white !default;
+
+$progress-height:                  4px !default;
+$progress-bar-height:              $global-full-height !default;
+$progress-bar-transition:          width .6s ease !default;
+
+// Mixins
+//------------------------------------------------------
+@mixin progress-style($types: primary success important, $values: $progress-type-colors) {
+  @each $type in $types {
+    $index: index($types, $type);
+    @at-root #{&}--#{$type} .progress__bar {
+      background-color: nth($values, $index);
+    }
+  }
+}
+
+// Exports
+//------------------------------------------------------
+@include exports("progress") {
+
+  /**
+   * progress
+   * --------------------------------------------------
+   */
+  .progress {
+    background-color: lighten($progress-default, 35%);
+    height: $progress-height;
+
+    @include elements($name: bar) {
+      @include display($value: block);
+      color: $progress-font-color;
+      background-color: $progress-primary;
+      height: $progress-bar-height;
+      @include transition($progress-bar-transition);      
+    } 
+
+    @include progress-style($types: primary success important, $values: $progress-type-colors);
+  }
+}
+
+

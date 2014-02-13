@@ -1,0 +1,60 @@
+// Variables
+//------------------------------------------------------
+$page-padding:                    44px !default;
+$page-padding-toolbar:            58px !default;
+
+
+// Mixins
+//------------------------------------------------------
+
+@mixin toolbar-style($type: bottom spec, $extend: toolbar) {
+  @if $extend {
+    @if $type == spec {
+      @at-root &[title="toolbar"] {
+        padding: $page-padding 0 $page-padding-toolbar;       
+      }
+    } @else {
+      @at-root &[title="toolbar"] {
+        padding-#{$type}: $page-padding-toolbar;
+      }
+    }
+  }
+}
+
+@mixin page-style($types: top bottom spec) {
+  @if $types {
+    @each $type in $types {
+      @if $type == spec {
+        @at-root &[type="both"] {
+          padding: $page-padding 0;
+          @include toolbar-style($type: $type, $extend: toolbar);
+        }
+      } @else {
+        @at-root &[type="#{$type}"] {
+          padding-#{$type}: $page-padding;
+          @include toolbar-style($type: $type, $extend: toolbar);
+        }  
+      }
+    } 
+  }
+}
+
+// Exports
+//------------------------------------------------------
+
+@include exports("page") {
+
+  /**
+   * page
+   * --------------------------------------------------
+   */
+  section[role="page"] {
+    width: $global-full-width;
+    height: $global-full-width;
+
+    @include page-style($types: top bottom spec);
+  }
+
+}
+
+

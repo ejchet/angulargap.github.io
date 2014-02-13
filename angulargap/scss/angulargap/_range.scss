@@ -1,0 +1,116 @@
+// Variables
+//------------------------------------------------------
+$range-default:                 $global-gray !default;
+$range-primary:                 $global-blue !default;
+$range-success:                 $global-green !default;
+$range-important:               $global-red !default;
+$range-type-colors:             $range-primary $range-success $range-important !default;
+
+$range-padding:                 2px 4px !default;
+$range-height:                  21px !default;
+
+$range-input-flex:              272px !default;
+$range-input-height:            35px !default;
+$range-input-margin-vertical:   5px !default;
+$range-input-margin-horizontal: 25px !default;
+$range-input-padding:           2px !default;
+$range-input-shadow:            0 0 2px rgba(0, 0, 0, 0.5), 1px 3px 5px rgba(0, 0, 0, 0.25) !default;
+$range-input-max-width:         $global-full-width !default;
+
+$range-icon-flex:               24px !default;
+$range-icon-font-size:          $range-icon-flex !default;
+$range-icon-width:              $range-icon-flex !default;
+$range-icon-font-align:         center !default;
+
+$range-slider-padding:          25px !default;
+$range-slider-radius:           20px !default;
+$range-slider-width:            $range-slider-radius !default;
+$range-slider-height:           $range-slider-radius !default;
+$range-slider-white:            $global-white !default;
+$range-slider-before-width:     320px !default;
+$range-slider-before-height:    4px !default;
+
+// Mixins
+//------------------------------------------------------
+@mixin range-style($types: primary success important, $values: $range-type-colors) {
+  @each $type in $types {
+    $index: index($types, $type);
+    @at-root #{&}--#{$type} input[type=range]::-webkit-slider-thumb:before {
+      background-color: nth($values, $index);
+    }
+  }
+}
+
+// Exports
+//------------------------------------------------------
+@include exports("range") {
+
+  /**
+   * range
+   * --------------------------------------------------
+   */
+  input[type="range"] {
+    @include display($value: inline-block);
+    margin-top: $range-input-margin-vertical;
+    margin-bottom: $range-input-margin-vertical;
+    padding-right: $range-input-padding;
+    padding-left: $range-input-padding;
+    background-image: linear-gradient(to right, rgba(177, 177, 177, 1) 0%, rgba(179, 179, 179, 1) 100%);
+    background-position: center;
+    background-size: 96% 4px;
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+    overflow: hidden; 
+    width: auto;
+    height: $range-input-height;
+    outline: none;
+
+    &::-webkit-slider-thumb {
+      @include position($position: relative);
+      width: $range-slider-width;
+      height: $range-slider-height;
+      @include radius($type: border-radius, $value: $range-slider-radius);
+      background-color: $range-slider-white;
+      @include box-shadow($value: $range-input-shadow);
+      -webkit-appearance: none; 
+    }
+    &::-webkit-slider-thumb:before {
+      @include position($position: absolute, $top: 8px, $left: -320px);
+      width: $range-slider-before-width;
+      height: $range-slider-before-height;
+      background-color: $range-primary;
+      content: ''; 
+    }
+    &::-webkit-slider-thumb:after {
+      @include position($position: absolute, $top: -15px, $left: -15px);
+      padding: $range-slider-padding;
+      content: ''; 
+    }
+  }
+
+  .range {
+    @include display($value: flex);
+    @include flex-align($value: center);
+    padding: $range-padding; 
+    height: $range-height;
+
+    & .icon {
+      @include flex($fg: 0, $fs: 1, $fb: $range-icon-flex);
+      @include display($value: block);
+      min-width: $range-icon-width;
+      text-align: $range-icon-font-align;
+      font-size: $range-icon-font-size; 
+    }
+    & input[type="range"] {
+      @include flex($fg: 0, $fs: 1, $fb: $range-input-flex);
+      @include display($value: block);
+      margin-right: $range-input-margin-horizontal;
+      margin-left: $range-input-margin-horizontal;
+      width: $range-input-max-width; 
+    }
+
+    @include range-style($types: primary success important, $values: $range-type-colors);
+  }
+}
+
+

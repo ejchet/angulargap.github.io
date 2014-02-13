@@ -1,0 +1,116 @@
+// Variables
+//------------------------------------------------------
+$button-group-font-size:         $global-font-size !default;
+$button-group-min-height:        31px !default;
+$button-group-height:            32px !default;
+$button-group-line-height:       30px !default;
+$button-group-border:            1px !default;
+
+// Mixins
+//------------------------------------------------------
+@mixin botton-group-style($types: primary success important, $properties: color, $values: $button-type-colors, $style: sty1) {
+  @if $types and $properties and $values {  
+    @if $style == sty1 {
+      $items: ();
+      @each $type in $types {
+        $index: index($types, $type);
+        $items: unquote("#{&} .button--#{$type}"), unquote("#{&} .button--#{$type}:active");
+        @at-root #{$items} {
+           #{$properties}: nth($values, $index);
+        } 
+      }   
+    }
+    @if $style == sty2 {
+      $items: ();
+      @each $type in $types {
+        $index: index($types, $type);
+        $items: unquote("#{&} .button--#{$type}:active");
+        @at-root #{$items} {
+           #{$properties}: lighten(nth($values, $index), 30%);
+        } 
+      }   
+    }
+    @if $style == sty3 {
+      $items: ();
+      @each $type in $types {
+        $items: $items, unquote("#{&} .button--#{$type}.active");
+      }
+      @at-root #{$items} {
+         #{$properties}: $values;
+      }
+    }
+    @if $style == sty4 {
+      $items: ();
+      @each $type in $types {
+        $index: index($types, $type);
+        $items: unquote("#{&} .button--#{$type}.active");
+        @at-root #{$items} {
+           #{$properties}: nth($values, $index);
+        } 
+      }   
+    }
+  }
+}
+// Exports
+//------------------------------------------------------
+
+@include exports("button-group") {
+
+  /**
+   * button-group
+   * --------------------------------------------------
+   */
+  .button-group {
+    @include display($value: flex);
+    width: $global-full-width;
+
+    & .button {
+      @include flex($fg: 1, $fs: null, $fb: null);
+      @include display($value: block);
+      @include radius($type: border-radius, $value: 0);
+      border-right-width: 0;
+      background-color: $button-transparent;
+      color: $button-default;
+      min-height: $button-group-min-height;
+      height: $button-group-height;
+      line-height: $button-group-line-height;
+      font-size: $button-group-font-size;
+
+      &:first-child {
+        @include radius($type: border-radius, $value: $global-radius 0 0 $global-radius);
+      }
+      &:last-child {
+        @include radius($type: border-radius, $value: 0 $global-radius $global-radius 0);
+        border-right-width: $button-group-border;
+      }
+
+      &,
+      &:active {
+        @include opacity($opacity: 100, $filter: true);
+      }
+
+      &:active {
+        background-color: lighten($button-default, 30%);
+      }
+
+      &.active {
+        color: $button-font-color;
+        background-color: $button-default;
+      }
+    }
+
+    @include botton-group-style($types: primary success important, $properties: color, $values: $button-type-colors, $style: sty1);
+
+    @include botton-group-style($types: primary success important, $properties: background-color, $values: $button-type-colors, $style: sty2);
+
+    @include botton-group-style($types: primary success important, $properties: color, $values: $button-font-color, $style: sty3);
+
+    @include botton-group-style($types: primary success important, $properties: background-color, $values: $button-type-colors, $style: sty4);
+  }
+}
+
+
+
+
+
+

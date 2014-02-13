@@ -1,0 +1,54 @@
+// Mixins
+//------------------------------------------------------
+
+
+// Exports
+//------------------------------------------------------
+
+@include exports("util") {
+
+  /**
+   * clearfix
+   * --------------------------------------------------
+   */
+  .clearfix {
+    @include clearfix;
+  }
+
+  /**
+   * scroll
+   * --------------------------------------------------
+   */
+  .scroll-y, .scroll-x {
+    @include prefixer($property: overflow-scrolling, $value: touch, $prefixes: webkit moz spec);
+  }
+  .scroll-y {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  .scroll-x {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  /**
+   * hr
+   * --------------------------------------------------
+   */
+  .hr {
+    border-color: $global-gray;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+
+    @include modifiers($name: dotted) {
+      border-style: dotted;
+    }
+
+    @include modifiers($name: dashed) {
+      border-style: dashed;
+    }
+  }
+
+}
+
+

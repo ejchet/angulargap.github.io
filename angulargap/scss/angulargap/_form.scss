@@ -1,0 +1,121 @@
+// Variables
+//------------------------------------------------------
+$input-default:                 $global-gray !default;
+
+$input-radius:                  $global-radius !default;
+
+$input-options-padding:         15px !default;
+
+$input-control-margin:          -3px 0 !default;
+$input-control-border-size:     1px !default;
+$input-control-border-style:    solid !default;
+$input-control-font-size:       $global-font-size !default;
+$input-control-width:           $global-full-width !default;
+$input-control-height:          32px !default;
+$input-control-line-height:     21px !default;
+$input-control-padding:         0 10px !default;
+$input-control-icon-padding:    0 10px 0 30px !default;
+
+$input-label-font-weight:       $global-font-weight !default;
+
+$input-addon-first-margin:      -15px auto -15px -15px !default;
+$input-addon-last-margin:       -15px -15px -15px auto !default;
+$input-addon-align:             center !default;
+
+// Exports
+//------------------------------------------------------
+
+@include exports("form") {
+
+  /**
+   * form
+   * --------------------------------------------------
+   */
+
+  .input-label {
+    @include flex($fg: 1, $fs: null, $fb: 110px);
+    font-weight: $input-label-font-weight;
+  }
+
+  .input-addon {
+    @include flex($fg: 1, $fs: null, $fb: 40px);
+    text-align: $input-addon-align;
+
+    & .icon:first-child,
+    & .icon:last-of-type {
+      display: block !important;
+      position: static !important;
+    }
+    &:first-child .icon {
+      margin: $input-addon-first-margin;
+    }
+    &:last-child .icon {
+      margin: $input-addon-last-margin;
+    }
+  }
+
+  .input-control {
+    margin: $input-control-margin;
+    border: none;
+    font-size: $input-control-font-size;
+    width: $input-control-width;
+
+    &::-webkit-input-placeholder,
+    &:-moz-placeholder,
+    &::-moz-placeholder,
+    &:-ms-input-placeholder {
+      color: lighten($input-default, 10%);
+    }
+
+    &[disabled],
+    &[readonly] {
+      cursor: not-allowed;
+      background-color: lighten($input-default, 35%);
+    }
+  }   
+
+  .form-options {
+    padding: $input-options-padding;
+  }
+
+  .input-wrap {
+    position: relative;
+    @include display($value: flex);
+    @include flex($fg: 1, $fs: null, $fb: 0);
+
+    & .input-control {
+      @include border($width: $input-control-border-size, $style: $input-control-border-style, $color: lighten($input-default, 30%), $type: all);
+      @include radius($type: border-radius, $value: $input-radius);
+      padding: $input-control-padding;
+      height: $input-control-height;
+      line-height: $input-control-line-height;
+      background-color: lighten($input-default, 30%);
+    }
+
+    & ~ .button {
+      position: static !important;
+      margin-left: $input-options-padding;
+    }
+
+    & ~ .button.button--clear {
+      margin-left: $input-options-padding / 3;
+    }
+
+    &.input--icon {
+
+      & .input-control {
+        padding: $input-control-icon-padding;
+      }
+
+      & .icon:first-child {
+        @include position($position: absolute, $top: 0, $right: false, $bottom: false, $left: false);
+        left: 10px !important;
+        font-size: $input-control-font-size + 4 !important;
+        color: lighten($input-default, 10%);
+      }
+    }
+  }
+
+}
+
+

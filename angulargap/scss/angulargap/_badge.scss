@@ -1,0 +1,61 @@
+// Variables
+//------------------------------------------------------
+$badge-default:               $global-gray !default;
+$badge-primary:               $global-blue !default;
+$badge-success:               $global-green !default;
+$badge-important:             $global-red !default;
+$badge-type-colors:           $badge-primary $badge-success $badge-important !default;
+
+$badge-padding:               3px 8px !default;
+$badge-min-width:             10px !default;
+$badge-radius:                20px !default;
+$badge-vertical-align:        baseline !default;
+$badge-white-space:           nowrap !default;
+
+$badge-font-align:            center !default;
+$badge-font-weight:           normal !default;
+$badge-font-color:            $global-white !default;
+$badge-font-size:             $global-font-size !default;
+
+$badge-line-height:           16px !default;
+
+
+// Mixins
+//------------------------------------------------------
+@mixin badge-style($types: primary success important, $values: $badge-type-colors) {
+  @each $type in $types {
+    $index: index($types, $type);
+    @at-root #{&}--#{$type} {
+      background-color: nth($values, $index);
+    }
+  }
+}
+
+// Exports
+//------------------------------------------------------
+
+@include exports("badge") {
+
+  /**
+   * badge
+   * --------------------------------------------------
+   */
+  .badge {
+    @include display($value: inline-block);
+    padding: $badge-padding;
+    min-width: $badge-min-width;
+    @include radius($type: border-radius, $value: $badge-radius); 
+    vertical-align: $badge-vertical-align;
+    text-align: $badge-font-align;
+    white-space: $badge-white-space;
+    font-weight: $badge-font-weight;
+    font-size: $badge-font-size;
+    line-height: $badge-line-height;
+    color: $badge-font-color;
+    background-color: $badge-default;
+
+    @include badge-style($types: primary success important, $values: $badge-type-colors);
+  }
+}
+
+

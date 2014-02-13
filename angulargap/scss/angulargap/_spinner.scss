@@ -1,0 +1,76 @@
+// Variables
+//------------------------------------------------------
+$spinner-default:                 $global-gray !default;
+$spinner-primary:                 $global-blue !default;
+$spinner-success:                 $global-green !default;
+$spinner-important:               $global-red !default;
+$spinner-type-colors:             $spinner-primary $spinner-success $spinner-important !default;
+
+$spinner-center:                  0 auto !default;
+$spinner-radius:                  32px !default;
+$spinner-width:                   $spinner-radius !default;
+$spinner-height:                  $spinner-radius !default;
+$spinner-keyframes:               rotation !default;
+$spinner-animation:               $spinner-keyframes .75s infinite linear !default; 
+
+$spinner-border-width:            1px !default;
+
+$spinner-before-width:            $global-full-width !default;
+$spinner-before-height:           $global-full-height !default;
+$spinner-before-border-width:     1px 0 0 !default;
+$spinner-before-border-color:     lighten($spinner-default, 5%) transparent transparent transparent !default;
+
+// Mixins
+//------------------------------------------------------
+@mixin spinner-style($types: primary success important, $values: $spinner-type-colors) {
+  @each $type in $types {
+    $index: index($types, $type);
+    @at-root #{&}--#{$type} {
+      @include border($width: $spinner-border-width, $style: solid, $color: lighten(nth($values, $index), 10%), $type: all);
+      &:before {
+        @include border($width: false, $style: false, $color: nth($values, $index), $type: all);
+      }
+    }
+  }
+}
+
+// Exports
+//------------------------------------------------------
+
+@include exports("spinner") {
+
+  /**
+   * spinner
+   * --------------------------------------------------
+   */
+  .spinner {
+    @include position($position: relative);
+    @include display($value: inline-block);
+    margin: $spinner-center;
+    @include animation($spinner-animation);
+    @include border($width: $spinner-border-width, $style: solid, $color: lighten($spinner-default, 10%), $type: all);
+    @include radius($type: border-radius, $value: $spinner-radius);
+    width: $spinner-width;
+    height: $spinner-height; 
+
+    &:before {
+      @include position($position: absolute, $top: 0, $left: 0);
+      content: "";
+      @include display($value: block);
+      @include border($width: $spinner-before-border-width, $style: solid, $color: $spinner-before-border-color, $type: null);
+      @include radius($type: border-radius, $value: $spinner-radius);
+      width: $spinner-before-width;  
+      height: $spinner-before-height;
+    }
+
+    @include spinner-style($types: primary success important, $values: $spinner-type-colors);
+
+  }
+
+  @include keyframes($name: $spinner-keyframes) {
+    from  { @include transform($value: rotate(0deg));}
+    to { @include transform($value: rotate(359deg)); }
+  }
+}
+
+

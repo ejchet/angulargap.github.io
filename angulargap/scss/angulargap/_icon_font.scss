@@ -1,0 +1,56 @@
+// Variables
+//------------------------------------------------------
+$icon-font-src:            '../fonts' !default;
+$icon-font-name:           angularicons !default;
+$icon-font-weight:         normal !default; 
+$icon-font-style:          normal !default; 
+$icon-vertical-align:      top !default;
+
+// Exports
+//------------------------------------------------------
+
+@include exports("icon_font") {
+
+  /**
+   * icon_font
+   * --------------------------------------------------
+   */
+
+  @font-face {
+    font-family: quote($icon-font-name);
+    src: url('#{$icon-font-src}/#{$icon-font-name}.eot');
+    src: url('#{$icon-font-src}/#{$icon-font-name}.eot?#iefix') format('embedded-opentype'), 
+         url('#{$icon-font-src}/#{$icon-font-name}.woff') format('woff'), 
+         url('#{$icon-font-src}/#{$icon-font-name}.ttf') format('truetype'), 
+         url('#{$icon-font-src}/#{$icon-font-name}.svg') format('svg');
+  }
+
+  .icon {
+    @include display($value: inline-block);
+    font-family: quote($icon-font-name);
+    font-weight: $icon-font-weight;
+    font-style: $icon-font-style;
+    text-decoration: none;
+    vertical-align: $icon-vertical-align;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+
+    @include modifiers(primary) {
+      color: $global-blue;
+    }
+    @include modifiers(success) {
+      color: $global-green;
+    }
+    @include modifiers(important) {
+      color: $global-red;
+    }
+
+    &[data-icon]:before {
+      content: attr(data-icon);
+      speak: none;
+    }
+  }
+
+}
+
+

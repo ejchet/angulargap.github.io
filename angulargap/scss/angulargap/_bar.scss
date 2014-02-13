@@ -1,0 +1,110 @@
+// Variables
+//------------------------------------------------------
+$bar-height:               44px !default;
+$bar-zindex:               10 !default;
+$bar-margin:               0 10px !default;
+
+$bar-common-color:         $global-gray !default;       
+$bar-background-color:     lighten($bar-common-color, 38%) !default;
+$bar-border-color:         lighten($bar-common-color, 15%) !default;
+$bar-border-size:          1px !default;
+$bar-border-style:         solid !default;
+
+$bar-title-min-width:      30px !default;
+$bar-title-line-height:    42px !default;
+$bar-title-overflow:       hidden !default;
+$bar-title-align:          center !default;
+$bar-title-bold:           $global-font-weight !default;
+
+$bar-button-top:           5px !default;
+$bar-button-side:          10px !default;
+$bar-button-padding:       0 8px !default; 
+$bar-button-min-width:     initial !default; 
+$bar-button-height:        32px !default; 
+$bar-button-min-height:    $bar-button-height - 1 !default; 
+$bar-button-line-height:   $bar-button-height - 2 !default;
+
+$bar-button-group-margin:  6px 10px !default;
+
+$bar-input-padding:         0 10px !default;
+
+// Mixins
+//------------------------------------------------------
+@mixin option-style($types: left right) {
+  @if $types {
+    @include elements($name: $types) {
+      @include position($position: absolute, $top: $bar-button-top);
+    }
+    @each $type in $types {
+      @include elements($name: $type) {
+        #{$type}: $bar-button-side;
+      }
+    }     
+  }
+}
+
+// Exports
+//------------------------------------------------------
+
+@include exports("bar") {
+
+  /**
+   * bar
+   * --------------------------------------------------
+   */
+  .bar {
+    @include display($value: flex);
+    @include position($position: absolute, $right: 0, $left: 0);
+    width: $global-full-width;
+    height: $bar-height;
+    background-color: $bar-background-color;
+    z-index: $bar-zindex;
+
+    @include elements($name: title) {
+      margin: $bar-margin;
+      @include ellipsis();
+      font-size: $global-font-size;
+      font-weight: $bar-title-bold;
+      width: $global-full-width;
+      height: $bar-height;
+      min-width: $bar-title-min-width;
+      line-height: $bar-title-line-height;
+      overflow: $bar-title-overflow;    
+      text-align: $bar-title-align;
+    }
+
+    @include option-style($types: left right);
+
+    & .button {
+      padding: $bar-button-padding;
+      min-width: $bar-button-min-width;
+      min-height: $bar-button-min-height;
+      height: $bar-button-height;
+      font-size: $global-font-size;
+      line-height: $bar-button-line-height;    
+    }
+
+    & .button-group {
+      margin: $bar-button-group-margin;
+    }
+
+    @include modifiers($name: header) {
+      @include position($position: false, $top: 0);
+      @include border($width: $bar-border-size, $style: $bar-border-style, $color: $bar-border-color, $type: bottom);
+    }
+
+    @include modifiers($name: footer) {
+      @include position($position: false, $bottom: 0);
+      @include border($width: $bar-border-size, $style: $bar-border-style, $color: $bar-border-color, $type: top);
+    }
+
+    &.input-insert {
+      @include display($value: flex);
+      @include flex-align($value: center);
+      padding: $bar-input-padding;
+    }
+  }
+
+}
+
+

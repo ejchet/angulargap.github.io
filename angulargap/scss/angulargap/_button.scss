@@ -1,0 +1,154 @@
+// Variables
+//------------------------------------------------------
+$button-default:                 $global-gray !default;
+$button-primary:                 $global-blue !default;
+$button-success:                 $global-green !default;
+$button-important:               $global-red !default;
+$button-type-colors:             $button-primary $button-success $button-important !default;
+
+$button-cursor:                  pointer !default;
+
+$button-radius:                  $global-radius !default;
+
+$button-padding:                 1px 12px 0 !default;
+
+$button-border-size:             1px !default;
+$button-border-style:            solid !default;
+
+$button-min-width:               52px !default;
+$button-min-height:              42px !default;
+$button-line-height:             $button-min-height !default;
+
+$button-vertical-align:          top !default;
+
+$button-font-color:              $global-white !default;
+$button-font-align:              center !default;
+$button-font-size:               16px !default;
+
+$button-text-decoration:         none !default;
+
+$button-icon-size:               28px !default;
+$button-icon-line-height:        38px !default;
+
+$button-transparent:             transparent !default;
+
+$button-clear-padding:           1px 0 0 !default;
+
+
+// Mixins
+//------------------------------------------------------
+@mixin button-base($radius: $global-radius) {
+    @include display($value: inline-block);
+    padding: $button-padding;
+    @include border($width: $button-border-size, $style: $button-border-style, $color: $button-default, $type: all);
+    vertical-align: $button-vertical-align;
+    text-align: $button-font-align;
+    @include ellipsis();
+    font-size: $button-font-size;
+    min-width: $button-min-width;
+    min-height: $button-min-height;
+    line-height: $button-line-height;
+    cursor: $button-cursor;
+    background-color: $button-default;
+
+    @if $radius {
+      @include radius($type: border-radius, $value: $radius); 
+    } 
+
+    &:hover,
+    &:active {
+      text-decoration: $button-text-decoration;
+    }
+
+    &:active {
+      @include opacity($opacity:50, $filter: true);
+    }
+
+    &.disabled,
+    &[disabled] {
+      @include opacity($opacity:40, $filter: true);
+      cursor: default !important;
+      pointer-events: none;
+    }
+}
+
+@mixin button-style($types: primary success important, $properties: color, $values: $button-font-color, $style: sty1) {
+  @if $types and $properties and $values {
+    @if $style == sty1 {
+      $items: ();
+      @each $type in $types {
+        $items: $items, unquote("#{&}--#{$type}"), unquote("#{&}--#{$type}:hover"), unquote("#{&}--#{$type}:active");
+      }
+      $items: unquote("#{&}"), $items;
+      @at-root #{$items} {
+         #{$properties}: $values;
+      }
+    }
+    @if $style == sty2 {
+      @each $type in $types {
+        $index: index($types, $type);
+        @at-root #{&}--#{$type} {
+          @each $property in $properties {
+            #{$property}: nth($values, $index);
+          }
+        }
+      }       
+    }
+    @if $style == sty3 {
+      $items: ();
+      @each $type in $types {
+        $items: unquote("#{&}--outline#{&}--#{$type}"), unquote("#{&}--clear#{&}--#{$type}");
+        $index: index($types, $type);
+        @at-root #{$items} {
+          #{$properties}: nth($values, $index);
+        }
+      } 
+    }
+  }
+}
+
+// Exports
+//------------------------------------------------------
+
+@include exports("button") {
+
+  /**
+   * button
+   * --------------------------------------------------
+   */
+  .button {
+    @include button-base($radius: $button-radius);
+
+    @include button-style($types: primary success important, $properties: color, $values: $button-font-color, $style: sty1);
+
+    & .icon {
+      font-size: $button-icon-size !important;
+    }
+
+    @include button-style($types: primary success important, $properties: border-color background-color, $values: $button-type-colors, $style: sty2);
+
+    @include modifiers($name: block) {
+      @include display($value: block);
+      width: $global-full-width;
+    }
+
+    @include modifiers($name: outline clear) {
+      background-color: $button-transparent;
+      color: $button-default;
+    }
+
+    @include modifiers($name: clear) {
+      padding: $button-clear-padding;
+      border-color: $button-transparent;
+    }   
+
+    @include button-style($types: primary success important, $properties: color, $values: $button-type-colors, $style: sty3);
+
+    @include modifiers($name: icon) {
+      line-height: $button-icon-line-height;
+    } 
+  }
+
+}
+
+

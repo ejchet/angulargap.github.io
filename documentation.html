@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Documentation - AngularGap</title>
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- site css -->
+    <link rel="stylesheet" href="css/site.min.css">
+    <!-- angulargap css -->
+    <link rel="stylesheet" href="angulargap/css/angulargap.css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="js/site.min.js"></script>
+  </head>
+  <body data-spy="scroll" data-target=".aside-menu">
+    <div class="docs-header">
+      <!--nav-->
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><img src="img/logo.png" height="50"></a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a class="nav-link" href="getting-started.html">Getting Started</a></li>
+              <li><a class="nav-link current" href="documentation.html">Documentation</a></li>
+              <!-- <li><a class="nav-link" href="examples/">Examples</a></li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--header-->
+      <div class="topic">
+        <div class="container">
+          <h3>Documentation &amp; Components</h3>
+          <h4>The nuts and bolts of the AngularGap Framework</h4>
+<!--           <div class="advertisement">
+            <span class="advertisement-image">
+              <img src="" title="" alt="" border="0" height="90">
+            </span>
+            <p class="advertisement-text">AngularGap - is a beautiful front-end framework for developing hybrid mobile apps in HTML5.</p>
+          </div> -->
+        </div>
+        <div class="topic__infos">
+          <div class="container">
+            Need icons? Check out <a href="angularicons.html">Angularicons</a>, our custom-built icon font made specifically for AngularGap.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--documents-->
+    <div class="container documents">
+      <div class="row">
+        <!--menu-->
+        <div class="col-md-2 col-sm-3">
+          <div class="aside-menu">
+            <!-- components -->
+            <ul class="nav aside-menu__lists">
+              <li class="aside-menu__title"><a href="getting-started.html">Getting Started</a></li>
+              <li class="aside-menu__title"><a href="documentation.html">Components</a></li>
+              <li data-target="header" class="current"><a href="#header">Header</a></li>
+              <li data-target="footer"><a href="#footer">Footer</a></li>
+              <li data-target="button" data-type="parnet">
+              	<a href="#button">Button</a>
+				        <ul>
+                  <li data-target="block-button"><a href="#block-button">Block</a></li>
+                  <li data-target="outline-button"><a href="#outline-button">Outlined</a></li>
+                  <li data-target="clear-button"><a href="#clear-button">Clear</a></li>
+                  <li data-target="icon-button"><a href="#icon-button">Icon</a></li>
+                  <li data-target="header-button"><a href="#header-button">Header</a></li>
+                  <li data-target="clear-button-header"><a href="#clear-button-header">Clear Button in Header</a></li>
+                  <li data-target="button-group"><a href="#button-group">Button Group</a></li>
+                </ul>
+              </li>
+              <li data-target="list" data-type="parnet">
+                <a href="#list">List</a>
+                <ul>
+                  <li data-target="list-divider"><a href="#list-divider">Divider</a></li>
+                  <li data-target="list-icon"><a href="#list-icon">Icon</a></li>
+                  <li data-target="list-button"><a href="#list-button">Button</a></li>
+                  <li data-target="list-avatar"><a href="#list-avatar">Avatar</a></li>
+                  <li data-target="list-thumbnail"><a href="#list-thumbnail">Thumbnail</a></li>
+                </ul>
+              </li>
+              <li data-target="form" data-type="parnet">
+                <a href="#form">Form</a>
+                <ul>
+                  <li data-target="inline-label"><a href="#inline-label">Inline Label</a></li>
+                  <li data-target="form-addon"><a href="#form-addon">Form Addon</a></li>
+                  <li data-target="default-input"><a href="#default-input">Default Input</a></li>
+                  <li data-target="input-icon"><a href="#input-icon">Input Icon</a></li>
+                  <li data-target="header-input"><a href="#header-input">Header Input</a></li>
+                </ul>
+              </li>
+      			  <li data-target="card" data-type="parnet">
+                <a href="#card">Card</a>
+                <ul>
+                  <li data-target="card-list"><a href="#card-list">Card List</a></li>
+                  <li data-target="card-form"><a href="#card-form">Card Form</a></li>
+                </ul>
+      			  </li>
+      			  <li data-target="tab-bar" data-type="parnet">
+                <a href="#tab-bar">Tab Bar</a>
+                <ul>
+                  <li data-target="icon-only"><a href="#icon-only">Icon Only</a></li>
+                  <li data-target="top-icon"><a href="#top-icon">Top Icon</a></li>
+                  <li data-target="left-icon"><a href="#left-icon">Left Icon</a></li>
+                </ul>
+              </li>
+              <li data-target="toggle"><a href="#toggle">Toggle</a></li>
+              <li data-target="checkbox"><a href="#checkbox">Checkbox</a></li>
+              <li data-target="radio"><a href="#radio">Radio</a></li>
+              <li data-target="range"><a href="#range">Range</a></li>
+              <li data-target="spinner"><a href="#spinner">Spinner</a></li>
+              <li data-target="progress"><a href="#progress">Progress</a></li>
+              <li data-target="masonry"><a href="#masonry">Masonry</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-10 col-sm-9 details">
+            <div class="device">
+              <div class="device__mockup">
+                  <div class="screen">
+                    <!-- example-header
+                    ================================================== -->
+                    <div class="example" data-type="header" style="display: block">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Header</h2>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-footer
+                    ================================================== -->
+                    <div class="example" data-type="footer">
+                      <section role="page" type="bottom">
+                        <div class="bar bar--footer">
+                          <h2 class="bar__title">Footer</h2>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-button
+                    ================================================== -->
+                    <div class="example" data-type="button">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Button</h2>
+                        </div>
+                        <div class="content">
+                        	<p><button class="button">Button Default</button></p>
+                        	<p><button class="button button--primary">Button Primary</button></p>
+	              			<p><button class="button button--success">Button success</button></p>
+	              			<p><button class="button button--important">Button Important</button></p>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-block button
+                    ================================================== -->
+                    <div class="example" data-type="block-button">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Block Button</h2>
+                        </div>
+                        <div class="content">
+                        	<p><button class="button button--block">Button Default</button></p>
+                        	<p><button class="button button--primary button--block">Button Primary</button></p>
+	              			<p><button class="button button--success button--block">Button success</button></p>
+	              			<p><button class="button button--important button--block">Button Important</button></p>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-outline button
+                    ================================================== -->
+                    <div class="example" data-type="outline-button">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Outline Button</h2>
+                        </div>
+                        <div class="content">
+                          <p><button class="button button--outline">Button Default</button></p>
+                          <p><button class="button button--primary button--outline">Button Primary</button></p>
+                          <p><button class="button button--success button--outline">Button success</button></p>
+                          <p><button class="button button--important button--outline">Button Important</button></p>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-clear button
+                    ================================================== -->
+                    <div class="example" data-type="clear-button">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Clear Button</h2>
+                        </div>
+                        <div class="content">
+                          <p><button class="button button--clear">Button Default</button></p>
+                          <p><button class="button button--primary button--clear">Button Primary</button></p>
+                          <p><button class="button button--success button--clear">Button success</button></p>
+                          <p><button class="button button--important button--clear">Button Important</button></p>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-icon button
+                    ================================================== -->
+                    <div class="example" data-type="icon-button">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Icon Button</h2>
+                        </div>
+                        <div class="content">
+                          <p><a href="" class="button button--icon"><i class="icon" data-icon="&#xe02f"></i> Home</a></p>
+                          <p><span class="button button--primary button--icon"><i class="icon" data-icon="&#xe0da"></i> Favorites</span></p>
+                          <p><div class="button button--success button--clear button--icon"><i class="icon" data-icon="&#xe036"></i> Back</div></p>
+                          <p><button class="button button--clear button--icon"><i class="icon" data-icon="&#xe084"></i></button></p>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-header button
+                    ================================================== -->
+                    <div class="example" data-type="header-button">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <div class="bar__left">
+                            <button class="button button--primary button--icon"><i class="icon" data-icon="&#xe075"></i> Menu</button>
+                          </div>
+                          <h2 class="bar__title">Header</h2>
+                          <div class="bar__right">
+                            <button class="button button--primary button--icon"><i class="icon" data-icon="&#xe084"></i> Setting</button>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-clear button
+                    ================================================== -->
+                    <div class="example" data-type="clear-button-header">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <div class="bar__left">
+                            <button class="button button--primary button--clear button--icon"><i class="icon" data-icon="&#xe075"></i> Menu</button>
+                          </div>
+                          <h2 class="bar__title">Header</h2>
+                          <div class="bar__right">
+                            <button class="button button--primary button--clear button--icon"><i class="icon" data-icon="&#xe084"></i> Setting</button>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-button group
+                    ================================================== -->
+                    <div class="example" data-type="button-group">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Button Group</h2>
+                        </div>
+                        <div class="content">
+                          <div class="button-group">
+                            <a class="button active">First</a>
+                            <a class="button">Second</a>
+                            <a class="button">Third</a>
+                          </div>
+                          <div class="button-group">
+                            <a class="button button--primary active">First</a>
+                            <a class="button button--primary">Second</a>
+                            <a class="button button--primary">Third</a>
+                          </div>
+                          <div class="button-group">
+                            <a class="button button--success active">First</a>
+                            <a class="button button--success">Second</a>
+                            <a class="button button--success">Third</a>
+                          </div>
+                          <div class="button-group">
+                            <a class="button button--important active">First</a>
+                            <a class="button button--important">Second</a>
+                            <a class="button button--important">Third</a>
+                          </div>
+                          <div class="button-group">
+                            <a class="button button--outline active">First</a>
+                            <a class="button button--outline">Second</a>
+                            <a class="button button--outline">Third</a>
+                          </div>
+                          <div class="button-group">
+                            <a class="button button--outline button--primary active">First</a>
+                            <a class="button button--outline button--primary">Second</a>
+                            <a class="button button--outline button--primary">Third</a>
+                          </div>
+                          <div class="button-group">
+                            <a class="button button--outline button--success active">First</a>
+                            <a class="button button--outline button--success">Second</a>
+                            <a class="button button--outline button--success">Third</a>
+                          </div>
+                          <div class="button-group">
+                            <a class="button button--outline button--important active">First</a>
+                            <a class="button button--outline button--important">Second</a>
+                            <a class="button button--outline button--important">Third</a>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-list
+                    ================================================== -->
+                    <div class="example" data-type="list">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">List</h2>
+                        </div>
+                        <ul class="list">
+                          <li class="list__item">Battletoads</li>
+                          <li class="list__item">Contra</li>
+                          <li class="list__item">Duck Tales</li>
+                          <li class="list__item">Mega Man</li>
+                          <li class="list__item">Metroid</li>
+                          <li class="list__item">Mike Tyson's Punch-Out</li>
+                          <li class="list__item">R.C. Pro-Am</li>
+                          <li class="list__item">Spy Hunter</li>
+                          <li class="list__item">Super Mario Bros.</li>
+                          <li class="list__item">The Legend of Zelda</li>
+                        </ul>
+                      </section>
+                    </div>
+                    <!-- example-list divider
+                    ================================================== -->
+                    <div class="example" data-type="list-divider">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">List Divider</h2>
+                        </div>
+                        <div class="list">
+                          <div class="list__item item--divider">Candy Bars</div>
+                          <a class="list__item" href="#">Butterfinger<i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <a class="list__item" href="#">Kit Kat<i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <a class="list__item" href="#">Snickers<i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <a class="list__item" href="#">Twix<i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <div class="list__item item--divider">Hard Candy</div>
+                          <a class="list__item" href="#">Jolly Rancher<i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <a class="list__item" href="#">LifeSavers<i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <a class="list__item" href="#">Skittles<i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <a class="list__item" href="#">Gobstoppers<i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-list icon
+                    ================================================== -->
+                    <div class="example" data-type="list-icon">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">List Icon</h2>
+                        </div>
+                        <div class="list list--icon">
+                          <a class="list__item" href="#"><i class="icon" data-icon="&#xe076"></i>Check mail<span class="item__note"><span class="badge badge--primary">5</span></span><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <a class="list__item" href="#"><i class="icon" data-icon="&#xe055"></i>Call Ma<i class="icon" data-icon="&#xe0e0"></i></a>
+                          <a class="list__item" href="#"><i class="icon" data-icon="&#xe09d"></i>Record album<span class="item__note">Grammy</span><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <a class="list__item" href="#"><i class="icon" data-icon="&#xe0b2"></i>Friends<span class="item__note"><span class="badge badge--important">10</span></span><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <div class="list__item item--divider">Activities</div>
+                          <a class="list__item" href="#"><i class="icon" data-icon="&#xe033"></i>Breaking Bad<span class="item__note">Blue, yellow</span><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <a class="list__item" href="#"><i class="icon" data-icon="&#xe015"></i>Music<span class="item__note">JT</span><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <a class="list__item" href="#"><i class="icon" data-icon="&#xe00a"></i>Games<span class="item__note">Super Mario</span><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <a class="list__item" href="#"><i class="icon" data-icon="&#xe051"></i>Shopping<span class="item__note"><span class="badge badge--success">9</span></span><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-list button
+                    ================================================== -->
+                    <div class="example" data-type="list-button">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">List Button</h2>
+                        </div>
+                        <ul class="list">
+                          <li class="list__item">Call Ma<button class="button button--primary"><i class="icon" data-icon="&#xe0e0"></i></button></li>
+                        </ul>
+                      </section>
+                    </div>
+                    <!-- example-list avatar
+                    ================================================== -->
+                    <div class="example" data-type="list-avatar">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">List Avatar</h2>
+                        </div>
+                        <div class="list list--avatar">
+                          <a class="list__item" href="#"><img src="img/photos/venkman.jpg"><h2>Venkman</h2><p>Back off, man. I'm a scientist.</p><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <a class="list__item" href="#"><img src="img/photos/spengler.jpg"><h2>Egon</h2><p>We're gonna go full stream.</p><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <a class="list__item" href="#"><img src="img/photos/stantz.jpg"><h2>Ray</h2><p>Ugly little spud, isn't he?</p><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <a class="list__item" href="#"><img src="img/photos/winston.jpg"><h2>Winston</h2><p>That's a big Twinkie.</p><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <a class="list__item" href="#"><img src="img/photos/tully.jpg"><h2>Tully</h2><p>Okay, who brought the dog?</p><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <a class="list__item" href="#"><img src="img/photos/barrett.jpg"><h2>Dana</h2><p>I am The Gatekeeper!</p><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <a class="list__item" href="#"><img src="img/photos/slimer.jpg"><h2>Slimer</h2><p>Boo!</p><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-list thumbnail
+                    ================================================== -->
+                    <div class="example" data-type="list-thumbnail">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">List Thumbnail</h2>
+                        </div>
+                        <div class="list list--thumbnail">
+                          <a class="list__item" href="#"><img src="img/photos/blue-album.jpg"><h2>OneRepublic</h2><p>Waking Up</p><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <a class="list__item" href="#"><img src="img/photos/siamese-dream.jpg"><h2>The Script</h2><p>Science &amp; Faith</p><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <a class="list__item" href="#"><img src="img/photos/nevermind.jpg"><h2>Nirvana</h2><p>Nevermind</p><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                          <a class="list__item" href="#"><img src="img/photos/license-to-ill.jpg"><h2>Beastie Boys</h2><p>License To Ill</p><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-form
+                    ================================================== -->
+                    <div class="example" data-type="form">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Form</h2>
+                        </div>
+                        <div class="list">
+                          <label class="list__item input-insert"><input class="input-control" type="text" placeholder="Username" /></label>
+                          <label class="list__item input-insert"><input class="input-control" type="text" placeholder="Password" /></label>
+                          <span class="list__item">
+                            Rember Password
+                            <label class="toggle">
+                              <input type="checkbox">
+                              <span class="handle"></span>
+                            </label>
+                          </span>
+                        </div>
+                        <div class="form-options">
+                          <button class="button button--primary button--block">LogIn</button>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-form inline label
+                    ================================================== -->
+                    <div class="example" data-type="inline-label">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Inline Lable</h2>
+                        </div>
+                        <div class="list">
+                          <label class="list__item input-insert"><span class="input-label">Username</span><input class="input-control" type="text" /></label>
+                          <label class="list__item input-insert"><span class="input-label">Password</span><input class="input-control" type="text" /></label>
+                          <span class="list__item">
+                            Rember Password
+                            <label class="toggle">
+                              <input type="checkbox">
+                              <span class="handle"></span>
+                            </label>
+                          </span>
+                        </div>
+                        <div class="form-options">
+                          <button class="button button--primary button--block">LogIn</button>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-form addon
+                    ================================================== -->
+                    <div class="example" data-type="form-addon">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Form Addon</h2>
+                        </div>
+                        <div class="list">
+                          <label class="list__item input-insert"><span class="input-addon"><i class="icon" data-icon="&#xe0b4"></i></span><input class="input-control" type="text" placeholder="Username" /></label>
+                          <label class="list__item input-insert"><span class="input-addon"><i class="icon" data-icon="&#xe00c"></i></span><input class="input-control" type="text" placeholder="Password" /></label>
+                          <span class="list__item">
+                            Rember Password
+                            <label class="toggle">
+                              <input type="checkbox">
+                              <span class="handle"></span>
+                            </label>
+                          </span>
+                        </div>
+                        <div class="form-options">
+                          <button class="button button--primary button--block">LogIn</button>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-default input
+                    ================================================== -->
+                    <div class="example" data-type="default-input">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Default Input</h2>
+                        </div>
+                        <div class="list">
+                          <div class="list__item input-insert">
+                            <label class="input-wrap">
+                              <input class="input-control" type="text" placeholder="Email" />
+                            </label>
+                            <button class="button button--primary">Submit</button>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-input icon
+                    ================================================== -->
+                    <div class="example" data-type="input-icon">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Input Icon</h2>
+                        </div>
+                        <div class="list">
+                          <div class="list__item input-insert">
+                            <label class="input-wrap input--icon">
+                              <i class="icon" data-icon="&#xe0d1"></i><input class="input-control" type="text" placeholder="Search" />
+                            </label>
+                            <button class="button button--primary">Search</button>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-header input
+                    ================================================== -->
+                    <div class="example" data-type="header-input">
+                      <section role="page" type="top">
+                        <div class="bar bar--header input-insert">
+                            <label class="input-wrap input--icon">
+                              <i class="icon" data-icon="&#xe0d1"></i><input class="input-control" type="text" placeholder="Search" />
+                            </label>
+                            <button class="button button--clear">Search</button>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-card
+                    ================================================== -->
+                    <div class="example" data-type="card">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Card</h2>
+                        </div>
+            						<div class="card">
+            							<p class="card__item">They're are a great way to contain and organize information, while also setting up predictable expectations for the user.</p>
+            						</div>
+                      </section>
+                    </div>
+                    <!-- example-card list
+                    ================================================== -->
+                    <div class="example" data-type="card-list">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Card List</h2>
+                        </div>
+            						<div class="card list list--icon">
+          							  <a class="list__item" href="#"><i class="icon" data-icon="&#xe076"></i>Check mail<span class="item__note"><span class="badge badge--primary">5</span></span><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+          							  <a class="list__item" href="#"><i class="icon" data-icon="&#xe055"></i>Call Ma<i class="icon" data-icon="&#xe0e0"></i></a>
+          							  <a class="list__item" href="#"><i class="icon" data-icon="&#xe09d"></i>Record album<span class="item__note">Grammy</span><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+          							  <a class="list__item" href="#"><i class="icon" data-icon="&#xe0b2"></i>Friends<span class="item__note"><span class="badge badge--important">10</span></span><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+          							  <div class="list__item item--divider">Activities</div>
+          							  <a class="list__item" href="#"><i class="icon" data-icon="&#xe033"></i>Breaking Bad<span class="item__note">Blue, yellow</span><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+          							  <a class="list__item" href="#"><i class="icon" data-icon="&#xe015"></i>Music<span class="item__note">JT</span><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+          							  <a class="list__item" href="#"><i class="icon" data-icon="&#xe00a"></i>Games<span class="item__note">Super Mario</span><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+          							  <a class="list__item" href="#"><i class="icon" data-icon="&#xe051"></i>Shopping<span class="item__note"><span class="badge badge--success">9</span></span><i class="icon icon__arrow" data-icon="&#xe037"></i></a>
+            						</div>
+                      </section>
+                    </div>
+                    <!-- example-card form
+                    ================================================== -->
+                    <div class="example" data-type="card-form">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Card Form</h2>
+                        </div>
+                        <div class="card list">
+                          <label class="list__item input-insert"><input class="input-control" type="text" placeholder="Username" /></label>
+                          <label class="list__item input-insert"><input class="input-control" type="text" placeholder="Password" /></label>
+                          <span class="list__item"> Rember Password<label class="toggle"><input type="checkbox"><span class="handle"></span></label></span>
+                        </div>
+                        <div class="form-options">
+                          <button class="button button--primary button--block">LogIn</button>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-tab bar
+                    ================================================== -->
+                    <div class="example" data-type="tab-bar">
+                      <section role="page" type="bottom">
+                        <div class="bar bar--footer">
+                          <div class="tab">
+                            <a class="tab__item active" href="#">Home</a>
+                            <a class="tab__item" href="#">Favorites</a>
+                            <a class="tab__item" href="#">Setting</a>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-tab bar icon only
+                    ================================================== -->
+                    <div class="example" data-type="icon-only">
+                      <section role="page" type="bottom">
+                        <div class="bar bar--footer">
+                          <div class="tab tab__icon--only">
+                            <a class="tab__item active" href="#"><i class="icon" data-icon="&#xe02f"></i></a>
+                            <a class="tab__item" href="#"><i class="icon" data-icon="&#xe0da"></i></a>
+                            <a class="tab__item" href="#"><i class="icon" data-icon="&#xe084"></i></a>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-tab bar icon top
+                    ================================================== -->
+                    <div class="example" data-type="top-icon">
+                      <section role="page" type="bottom">
+                        <div class="bar bar--footer">
+                          <div class="tab tab--iconTop">
+                            <a class="tab__item active" href="#"><i class="icon" data-icon="&#xe02f"></i>Home</a>
+                            <a class="tab__item" href="#"><i class="icon" data-icon="&#xe0da"></i>Favorites</a>
+                            <a class="tab__item" href="#"><i class="icon" data-icon="&#xe084"></i>Setting</a>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-tab bar icon left
+                    ================================================== -->
+                    <div class="example" data-type="left-icon">
+                      <section role="page" type="bottom">
+                        <div class="bar bar--footer">
+                          <div class="tab tab--iconLeft">
+                            <a class="tab__item active" href="#"><i class="icon" data-icon="&#xe02f"></i>Home</a>
+                            <a class="tab__item" href="#"><i class="icon" data-icon="&#xe0da"></i>Favorites</a>
+                            <a class="tab__item" href="#"><i class="icon" data-icon="&#xe084"></i>Setting</a>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-toggle
+                    ================================================== -->
+                    <div class="example" data-type="toggle">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Toggle</h2>
+                        </div>
+                        <ul class="list">
+                          <li class="list__item item--divider">CheckBox Toggle</li>
+                          <li class="list__item">CheckBox Toggle Default<label class="toggle"><input type="checkbox" /><span class="handle"></span></label></li>
+                          <li class="list__item">CheckBox Toggle Checked<label class="toggle"><input type="checkbox" checked /><span class="handle"></span></label></li>
+                          <li class="list__item">CheckBox Toggle disabled<label class="toggle"><input type="checkbox" disabled /><span class="handle"></span></label></li>
+                          <li class="list__item item--divider">Radio Toggle</li>
+                          <li class="list__item">Radio Toggle Default<label class="toggle"><input type="radio" /><span class="handle"></span></label></li>
+                          <li class="list__item">Radio Toggle Checked<label class="toggle"><input type="radio" checked /><span class="handle"></span></label></li>
+                          <li class="list__item">Radio Toggle disabled<label class="toggle"><input type="radio" disabled /><span class="handle"></span></label></li>
+                        </ul>
+                      </section>
+                    </div>
+                    <!-- example-checkbox
+                    ================================================== -->
+                    <div class="example" data-type="checkbox">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Checkbox</h2>
+                        </div>
+                        <ul class="list list--checkbox">
+                          <li class="list__item"><label>Html5<input type="checkbox" /><i class="icon handle" data-icon="&#xe057"></i></label></li>
+                          <li class="list__item"><label>CSS3<input type="checkbox" checked /><i class="icon handle icon--primary" data-icon="&#xe057"></i></label></li>
+                          <li class="list__item"><label>PHP<input type="checkbox" checked /><i class="icon handle icon--success" data-icon="&#xe057"></i></label></li>
+                          <li class="list__item"><label>Javascript<input type="checkbox" checked /><i class="icon handle icon--important" data-icon="&#xe057"></i></label></li>
+                          <li class="list__item"><label>Asp<input type="checkbox" /><i class="icon handle" data-icon="&#xe057"></i></label></li>
+                          <li class="list__item"><label>Actionscript<input type="checkbox" /><i class="icon handle" data-icon="&#xe057"></i></label></li>
+                        </ul>
+                      </section>
+                    </div>
+                    <!-- example-radio
+                    ================================================== -->
+                    <div class="example" data-type="radio">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Radio</h2>
+                        </div>
+                        <ul class="list list--radio">
+                          <li class="list__item"><label>Html5<input type="radio" name="radio" value="Html5" /><i class="icon handle" data-icon="&#xe057"></i></label></li>
+                          <li class="list__item"><label>CSS3<input type="radio" name="radio" value="CSS3" checked /><i class="icon handle icon--primary" data-icon="&#xe057"></i></label></li>
+                          <li class="list__item"><label>PHP<input type="radio" name="radio" value="PHP" checked /><i class="icon handle icon--success" data-icon="&#xe057"></i></label></li>
+                          <li class="list__item"><label>Javascript<input type="radio" name="radio" value="Javascript" checked /><i class="icon handle icon--important" data-icon="&#xe057"></i></label></li>
+                          <li class="list__item"><label>Asp<input type="radio" name="radio" value="Asp" /><i class="icon handle" data-icon="&#xe057"></i></label></li>
+                          <li class="list__item"><label>Actionscript<input type="radio" name="radio" value="Actionscript" /><i class="icon handle" data-icon="&#xe057"></i></label></li>
+                        </ul>
+                      </section>
+                    </div>
+                    <!-- example-range
+                    ================================================== -->
+                    <div class="example" data-type="range">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Range</h2>
+                        </div>
+                        <ul class="list">
+                          <li class="list__item">
+                            <div class="range">
+                              <i class="icon" data-icon="&#xe0de"></i>
+                              <input type="range" name="volume">
+                              <i class="icon" data-icon="&#xe0df"></i>
+                            </div>
+                          </li>
+                          <li class="list__item item--divider">Ranges In A List</li>
+                          <li class="list__item">
+                            <div class="range range--primary">
+                              <i class="icon" data-icon="&#xe0de"></i>
+                              <input type="range" name="volume" min="0" max="100" value="25">
+                              <i class="icon" data-icon="&#xe0df"></i>
+                            </div>
+                          </li>
+                          <li class="list__item">
+                            <div class="range range--success">
+                              <i class="icon" data-icon="&#xe0de"></i>
+                              <input type="range" name="volume" min="0" max="100" value="45">
+                              <i class="icon" data-icon="&#xe0df"></i>
+                            </div>
+                          </li>
+                          <li class="list__item">
+                            <div class="range range--important">
+                              <i class="icon" data-icon="&#xe0de"></i>
+                              <input type="range" name="volume" min="0" max="100" value="65">
+                              <i class="icon" data-icon="&#xe0df"></i>
+                            </div>
+                          </li>
+                        </ul>
+                      </section>
+                    </div>
+                    <!-- example-spinner
+                    ================================================== -->
+                    <div class="example" data-type="spinner">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Spinner</h2>
+                        </div>
+                        <div class="content">
+                          <div class="table-box">
+                            <div class="td__item">
+                              <div class="spinner"></div>
+                            </div>
+                            <div class="td__item">
+                              <div class="spinner spinner--primary"></div>
+                            </div>
+                            <div class="td__item">
+                              <div class="spinner spinner--success"></div>
+                            </div>
+                            <div class="td__item">
+                              <div class="spinner spinner--important"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-progress
+                    ================================================== -->
+                    <div class="example" data-type="progress">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Progress</h2>
+                        </div>
+                        <div class="content">
+                          <div class="progress">
+                            <div class="progress__bar" style="width: 25%"></div>
+                          </div>
+                           <div class="progress progress--primary">
+                            <div class="progress__bar" style="width: 45%"></div>
+                          </div>
+                          <div class="progress progress--success">
+                            <div class="progress__bar" style="width: 65%"></div>
+                          </div>
+                          <div class="progress progress--important">
+                            <div class="progress__bar" style="width: 85%"></div>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-masonry
+                    ================================================== -->
+                    <div class="example" data-type="masonry">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Masonry</h2>
+                        </div>
+                        <ul class="masonry">
+                          <li class="masonry__item"><img src="img/masonry/1.jpg" /></li>
+                          <li class="masonry__item"><img src="img/masonry/2.jpg" /></li>
+                          <li class="masonry__item"><img src="img/masonry/3.jpg" /></li>
+                          <li class="masonry__item"><img src="img/masonry/4.jpg" /></li>
+                          <li class="masonry__item"><img src="img/masonry/5.jpg" /></li>
+                          <li class="masonry__item"><img src="img/masonry/6.jpg" /></li>
+                          <li class="masonry__item"><img src="img/masonry/7.jpg" /></li>
+                          <li class="masonry__item"><img src="img/masonry/8.jpg" /></li>
+                          <li class="masonry__item"><img src="img/masonry/9.jpg" /></li>
+                          <li class="masonry__item"><img src="img/masonry/10.jpg" /></li>
+                        </ul>
+                      </section>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <!-- Header
+            ================================================== -->
+            <div class="docs-article" id="header">
+              <h3>Header</h3>
+              <p>Headers are fixed regions at the top of a screen that can contain a title label, and left/right buttons for navigation or to carry out various actions.</p>
+              <pre class="brush: html">
+                <section role="page" type="top">
+                    <div class="bar bar--header">
+                      <h2 class="bar__title">Header</h2>
+                    </div>
+                </section>
+              </pre>
+            </div>
+            <!-- Footer
+            ================================================== -->
+            <div class="docs-article" id="footer">
+              <h3>Footer</h3>
+              <p>Footers are regions at the bottom of a screen that can contain various types of content.</p>
+              <pre class="brush: html">
+	              <section role="page" type="bottom">
+	                <div class="bar bar--footer">
+	                  <h2 class="bar__title">Footer</h2>
+	                </div>
+	              </section>
+              </pre>
+            </div>
+            <!-- Button
+            ================================================== -->
+            <div class="docs-article" id="button">
+              <h3>Button</h3>
+              <p>Ah, the Button, an essential part of any mobile experience. Like the Header, they come in the full spectrum of AngularGap's default colors.</p>
+              <p>By default a button has <code>display: inline-block</code> applied. Other options include <code>block</code> buttons for a full width.</p>
+              <pre class="brush: html">
+	              <button class="button">Button Default</button>
+	              <button class="button button--primary">Button Primary</button>
+	              <button class="button button--success">Button success</button>
+	              <button class="button button--important">Button Important</button>
+              </pre>
+            </div>
+            <!-- Block Button
+            ================================================== -->
+            <div class="docs-article" id="block-button">
+              <h3>Block Button</h3>
+              <p>Adding <code>button--block</code> to a button applies <code>display: block</code> display. A block button will however go 100% of its parent's width. In the example, the button's containing content element also has <code>padding</code> applied, so there is some breathing room between the edge of the device and the buttons.</p>
+              <pre class="brush: html">
+	              <button class="button button--block">Button Default</button>
+	              <button class="button button--primary button--block">Button Primary</button>
+	              <button class="button button--success button--block">Button success</button>
+	              <button class="button button--important button--block">Button Important</button>
+              </pre>
+            </div>
+            <!-- Outline Button
+            ================================================== -->
+            <div class="docs-article" id="outline-button">
+              <h3>Outline Button</h3>
+              <p>Use <code>button--outline</code> to apply an outline button style, which also has a transparent background.</p>
+              <pre class="brush: html">
+                <button class="button button--outline">Button Default</button>
+                <button class="button button--primary button--outline">Button Primary</button>
+                <button class="button button--success button--outline">Button success</button>
+                <button class="button button--important button--outline">Button Important</button>
+              </pre>
+            </div>
+            <!-- Clear Button
+            ================================================== -->
+            <div class="docs-article" id="clear-button">
+              <h3>Clear Button</h3>
+              <p>Add <code>button--clear</code> to remove the border and make the text stand out.</p>
+              <pre class="brush: html">
+                <button class="button button--clear">Button Default</button>
+                <button class="button button--primary button--clear">Button Primary</button>
+                <button class="button button--success button--clear">Button success</button>
+                <button class="button button--important button--clear">Button Important</button>
+              </pre>
+            </div>
+            <!-- Icon Button
+            ================================================== -->
+            <div class="docs-article" id="icon-button">
+              <h3>Icon Button</h3>
+              <p>Icons can easily be added to any button by using either the built in AngularGapons, or any custom font-pack you choose. <a href="https://github.com/flathemes/angulargap.github.io/angularicons.html" target="_blank">Learn more about icons</a>.</p>
+              <p>Icons can also be set with a child element inside the button, however, assigning the icon directly to the button reduces the number of elements in the DOM.</p>
+              <pre class="brush: html">
+                <a href="" class="button button--icon"><i class="icon" data-icon="&amp;#xe02f"></i> Home</a>
+                <span class="button button--primary button--icon"><i class="icon" data-icon="&amp;#xe0da"></i> Favorites</span>
+                <div class="button button--success button--clear button--icon"><i class="icon" data-icon="&amp;#xe036"></i> Back</div>
+                <button class="button button--clear button--icon"><i class="icon" data-icon="&amp;#xe084"></i></button>
+              </pre>
+            </div>
+            <!-- Header Button
+            ================================================== -->
+            <div class="docs-article" id="header-button">
+              <h3>Header Button</h3>
+              <p>When buttons are placed in headers or footers, they take the style of the bar by default, so you don't have to use the extra style classes. To change this, add the desired style class.</p>
+              <pre class="brush: html">
+                <section role="page" type="top">
+                  <div class="bar bar--header">
+                    <div class="bar__left">
+                      <button class="button button--primary button--icon"><i class="icon" data-icon="&amp;#xe075"></i> Menu</button>
+                    </div>
+                    <h2 class="bar__title">Header</h2>
+                    <div class="bar__right">
+                      <button class="button button--primary button--icon"><i class="icon" data-icon="&amp;#xe084"></i> Setting</button>
+                    </div>
+                  </div>
+                </section>
+              </pre>
+            </div>
+            <!-- Clear Button Header
+            ================================================== -->
+            <div class="docs-article" id="clear-button-header">
+              <h3>Clear Button Header</h3>
+              <p>For a more minimal approach to header buttons, simply add the <code>button-clear</code> classname to remove the background button color and border.</p>
+              <pre class="brush: html">
+                <section role="page" type="top">
+                  <div class="bar bar--header">
+                    <div class="bar__left">
+                      <button class="button button--primary button--clear button--icon"><i class="icon" data-icon="&amp;#xe075"></i> Menu</button>
+                    </div>
+                    <h2 class="bar__title">Header</h2>
+                    <div class="bar__right">
+                      <button class="button button--primary button--clear button--icon"><i class="icon" data-icon="&amp;#xe084"></i> Setting</button>
+                    </div>
+                  </div>
+                </section>
+              </pre>
+            </div>
+            <!-- Button Group
+            ================================================== -->
+            <div class="docs-article" id="button-group">
+              <h3>Button Group</h3>
+              <p>Buttons can also be easily grouped together using the <code>button-group</code> classname. In this example, a button bar was added to the default header bar, as well as in the main content area of the screen.</p>
+              <pre class="brush: html">
+                <div class="button-group">
+                  <a class="button active">First</a>
+                  <a class="button">Second</a>
+                  <a class="button">Third</a>
+                </div>
+              </pre>
+            </div>
+            <!-- List
+            ================================================== -->
+            <div class="docs-article" id="list">
+              <h3>List</h3>
+              <p>The List is a common and simple way of displaying... that's right, a list. This is a widely used interface across most current mobile OS's, and can include content ranging from basic text all the way to buttons, toggles, icons, and thumbnails.</p>
+              <p>The list view is a very versitile and powerful component. List views support various interaction modes such as editing, swipe to edit, drag to reorder, and pull to refresh.</p>
+              <pre class="brush: html">
+                <ul class="list">
+                    <li class="list__item">...</li>
+                </ul>
+              </pre>
+            </div>
+            <!-- List Divider
+            ================================================== -->
+            <div class="docs-article" id="list-divider">
+              <h3>List Divider</h3>
+              <p>List items can also be dividers to organize and group the list items. Use the <code>item--divider</code> class to create a divider for any child element of the list. By default list item dividers will have a different background color and font-weight, but this is easily customizable.</p>
+              <pre class="brush: html">
+                <ul class="list">
+                    <li class="list__item item--divider">...</li>
+                    <li class="list__item">...</li>
+                    <li class="list__item">...</li>
+                    ...
+                </ul>
+              </pre>
+            </div>
+            <!-- List Divider
+            ================================================== -->
+            <div class="docs-article" id="list-icon">
+              <h3>List Icon</h3>
+              <p>Lists can have icons assigned either to the left and/or right side of each list item, and the alignment classes should be assigned to each <code>list__item</code> element. Icons can easily be added to any item by using either the built in AngularIcons, or any custom font-pack you choose. <a href="https://github.com/flathemes/angulargap.github.io/angularicons.html" target="_blank">Learn more about icons</a>.</p>
+              <pre class="brush: html">
+                <div class="list">
+                  <a class="list__item" href="#"><i class="icon" data-icon="&amp;#xe076"></i>Check mail<i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                  <a class="list__item" href="#"><i class="icon" data-icon="&amp;#xe055"></i>Call Ma<i class="icon" data-icon="&amp;#xe0e0"></i></a>
+                  <a class="list__item" href="#"><i class="icon" data-icon="&amp;#xe09d"></i>Record album<span class="item__note">Grammy</span><i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                  <a class="list__item" href="#"><i class="icon" data-icon="&amp;#xe0b2"></i>Friends<span class="item__note"><span class="badge badge--important">0</span></span><i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                  <div class="list__item item--divider">Activities</div>
+                  <a class="list__item"href="#"><i class="icon" data-icon="&amp;#xe033"></i>Breaking Bad<span class="item__note">Blue, yellow</span><i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                  <a class="list__item" href="#"><i class="icon" data-icon="&amp;#xe051"></i>Shopping<i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                </div>
+              </pre>
+            </div>
+            <!-- List Button
+            ================================================== -->
+            <div class="docs-article" id="list-button">
+              <h3>List Button</h3>
+              <p>List items can also be dividers to organize and group the list items. Use the <code>item--divider</code> class to create a divider for any child element of the list. By default list item dividers will have a different background color and font-weight, but this is easily customizable.</p>
+              <pre class="brush: html">
+                <div class="list">
+                  <div class="list__item">Call Ma<button class="button button--primary"><i class="icon" data-icon="&amp;#xe0e0"></i></button></div>
+                </div>
+              </pre>
+            </div>
+            <!-- List Avatar
+            ================================================== -->
+            <div class="docs-article" id="list-avatar">
+              <h3>List Avatar</h3>
+              <p>List avatars are essentially a showcase of an image larger than an icon, and will often span/define the entire height of the list item. To create a thumbnail style list, use the <code>list-thumbnail</code> classname. In this example, we are using images of album covers.</p>
+              <pre class="brush: html">
+                <div class="list">
+                  <a class="list__item" href="#"><img src="img/photos/venkman.jpg"><h2>Venkman</h2><p>Back off, man. I'm a scientist.</p><i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                  <a class="list__item" href="#"><img src="img/photos/spengler.jpg"><h2>Egon</h2><p>We're gonna go full stream.</p><i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                  <a class="list__item" href="#"><img src="img/photos/stantz.jpg"><h2>Ray</h2><p>Ugly little spud, isn't he?</p><i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                  <a class="list__item" href="#"><img src="img/photos/winston.jpg"><h2>Winston</h2><p>That's a big Twinkie.</p><i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                  <a class="list__item" href="#"><img src="img/photos/tully.jpg"><h2>Tully</h2><p>Okay, who brought the dog?</p><i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                  <a class="list__item" href="#"><img src="img/photos/barrett.jpg"><h2>Dana</h2><p>I am The Gatekeeper!</p><i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                  <a class="list__item" href="#"><img src="img/photos/slimer.jpg"><h2>Slimer</h2><p>Boo!</p><i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                </div>
+              </pre>
+            </div>
+            <!-- List Thumbnail
+            ================================================== -->
+            <div class="docs-article" id="list-thumbnail">
+              <h3>List Thumbnail</h3>
+              <p>List Thumbnail are essentially a showcase of an image larger than an icon, and will often span/define the entire height of the list item.</p>
+              <pre class="brush: html">
+                <div class="list">
+                  <a class="list__item" href="#"><img src="img/photos/blue-album.jpg"><h2>Weezer</h2><p>Blue Album</p><i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                  <a class="list__item" href="#"><img src="img/photos/siamese-dream.jpg"><h2>Smashing Pumpkins</h2><p>Siamese Dream</p><i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                  <a class="list__item" href="#"><img src="img/photos/nevermind.jpg"><h2>Nirvana</h2><p>Nevermind</p><i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                  <a class="list__item" href="#"><img src="img/photos/license-to-ill.jpg"><h2>Beastie Boys</h2><p>License To Ill</p><i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                </div>
+              </pre>
+            </div>
+            <!-- Form
+            ================================================== -->
+            <div class="docs-article" id="form">
+              <h3>Form</h3>
+              <p>A list is also used to group related input elements. <code>input-control</code> is then used to designate each individual input field and it's associated label.</p>
+              <pre class="brush: html">
+                 <div class="list">
+                    <label class="list__item input-insert"><input class="input-control" type="text" placeholder="Username" /></label>
+                    <label class="list__item input-insert"><input class="input-control" type="text" placeholder="Password" /></label>
+                    <span class="list__item"> Rember Password<label class="toggle"><input type="checkbox"><span class="handle"></span></label></span>
+                  </div>
+                  <div class="form-options">
+                    <button class="button button--primary button--block">LogIn</button>
+                  </div>
+              </pre>
+            </div>
+            <!-- Form Inline Lable
+            ================================================== -->
+            <div class="docs-article" id="inline-label">
+              <h3>Inline Label</h3>
+              <p>Use <code>input-label</code> to place a label to the left of the input element. When the user enters text the label does not hide. Note that there's nothing stopping you from also using a <code>placeholder</code> label too.</p>
+              <pre class="brush: html">
+                  <div class="list">
+                    <label class="list__item input-insert"><span class="input-label">Username</span><input class="input-control" type="text" /></label>
+                    <label class="list__item input-insert"><span class="input-label">Password</span><input class="input-control" type="text" /></label>
+                    <span class="list__item"> Rember Password<label class="toggle"><input type="checkbox"><span class="handle"></span></label></span>
+                  </div>
+                  <div class="form-options">
+                    <button class="button button--primary button--block">LogIn</button>
+                  </div>
+              </pre>
+            </div>
+            <!-- Form Addon
+            ================================================== -->
+            <div class="docs-article" id="form-addon">
+              <h3>From Addon</h3>
+              <p>Use <code>input-addon</code> to place a label to the left of the input element. When the user enters text the label does not hide. Note that there's nothing stopping you from also using a <code>placeholder</code> label too.</p>
+              <pre class="brush: html">
+                <div class="list">
+                  <label class="list__item input-insert"><span class="input-addon"><i class="icon" data-icon="&amp;#xe0b4"></i></span><input class="input-control" type="text" placeholder="Username" /></label>
+                  <label class="list__item input-insert"><span class="input-addon"><i class="icon" data-icon="&amp;#xe00c"></i></span><input class="input-control" type="text" placeholder="Password" /></label>
+                  <span class="list__item"> Rember Password<label class="toggle"><input type="checkbox"><span class="handle"></span></label></span>
+                </div>
+                <div class="form-options">
+                  <button class="button button--primary button--block">LogIn</button>
+                </div>
+              </pre>
+            </div>
+            <!-- Default Input
+            ================================================== -->
+            <div class="docs-article" id="default-input">
+              <h3>Default Input</h3>
+              <p>Use the <code>input-wrap</code> classname to wrap a <code>input</code>. Placing a button inside the item.</p>
+              <pre class="brush: html">
+                <div class="list">
+                  <div class="list__item input-insert">
+                    <label class="input-wrap">
+                      <input class="input-control" type="text" placeholder="Email" />
+                    </label>
+                    <button class="button button--primary">Submit</button>
+                  </div>
+                </div>
+              </pre>
+            </div>
+            <!-- Input Icon
+            ================================================== -->
+            <div class="docs-article" id="input-icon">
+              <h3>Input Icon</h3>
+              <p>Use the <code>input-wrap input--icon</code> classname to wrap a <code>input</code>. Placing a button inside the item.</p>
+              <pre class="brush: html">
+                <div class="list">
+                  <div class="list__item input-insert">
+                    <label class="input-wrap input--icon">
+                      <i class="icon" data-icon="&amp;#xe0d1"></i><input class="input-control" type="text" placeholder="Search" />
+                    </label>
+                    <button class="button button--primary">Search</button>
+                  </div>
+                </div>
+              </pre>
+            </div>
+            <!-- Header Input
+            ================================================== -->
+            <div class="docs-article" id="header-input">
+              <h3>Header Input</h3>
+              <p>Inputs can also be placed in headers, along with buttons to submit or cancel the form.</p>
+              <pre class="brush: html">
+                  <section role="page" type="top">
+                    <div class="bar bar--header input-insert">
+                        <label class="input-wrap input--icon">
+                          <i class="icon" data-icon="&amp;#xe0d1"></i><input class="input-control" type="text" placeholder="Search" />
+                        </label>
+                        <button class="button button--clear">Search</button>
+                    </div>
+                  </section>
+              </pre>
+            </div>
+			      <!-- Card
+            ================================================== -->
+            <div class="docs-article" id="card">
+              <h3>Card</h3>
+              <p>They're are a great way to contain and organize information, while also setting up predictable expectations for the user. </p>
+              <pre class="brush: html">
+        				<div class="card">
+        					<p class="card__item">They're are a great way to contain and organize information, while also setting up predictable expectations for the user.</p>
+        				</div>
+              </pre>
+            </div>
+			      <!-- Card List
+            ================================================== -->
+            <div class="docs-article" id="card-list">
+              <h3>Card List</h3>
+              <p>Use the <code>card list</code> classname to create a card with lists.</p>
+              <pre class="brush: html">
+                <div class="card list list--icon">
+                  <a class="list__item" href="#"><i class="icon" data-icon="&amp;#xe076"></i>Check mail<span class="item__note"><span class="badge badge--primary">5</span></span><i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                  <a class="list__item" href="#"><i class="icon" data-icon="&amp;#xe055"></i>Call Ma<i class="icon" data-icon="&amp;#xe0e0"></i></a>
+                  <a class="list__item" href="#"><i class="icon" data-icon="&amp;#xe09d"></i>Record album<span class="item__note">Grammy</span><i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                  <a class="list__item" href="#"><i class="icon" data-icon="&amp;#xe0b2"></i>Friends<span class="item__note"><span class="badge badge--important">10</span></span><i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                  <div class="list__item item--divider">Activities</div>
+                  <a class="list__item" href="#"><i class="icon" data-icon="&amp;#xe033"></i>Breaking Bad<span class="item__note">Blue, yellow</span><i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                  <a class="list__item" href="#"><i class="icon" data-icon="&amp;#xe015"></i>Music<span class="item__note">JT</span><i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                  <a class="list__item" href="#"><i class="icon" data-icon="&amp;#xe00a"></i>Games<span class="item__note">Super Mario</span><i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                  <a class="list__item" href="#"><i class="icon" data-icon="&amp;#xe051"></i>Shopping<span class="item__note"><span class="badge badge--success">9</span></span><i class="icon icon__arrow" data-icon="&amp;#xe037"></i></a>
+                </div>
+              </pre>
+            </div>
+            <!-- Card Form
+            ================================================== -->
+            <div class="docs-article" id="card-form">
+              <h3>Card From</h3>
+              <p>Use the <code>card list</code> classname to create a card with form.</p>
+              <pre class="brush: html">
+                <div class="card list">
+                  <label class="list__item input-insert"><input class="input-control" type="text" placeholder="Username" /></label>
+                  <label class="list__item input-insert"><input class="input-control" type="text" placeholder="Password" /></label>
+                  <span class="list__item"> Rember Password<label class="toggle"><input type="checkbox"><span class="handle"></span></label></span>
+                </div>
+                <div class="form-options">
+                  <button class="button button--primary button--block">LogIn</button>
+                </div>
+              </pre>
+            </div>
+            <!-- Tab Bar
+            ================================================== -->
+            <div class="docs-article" id="tab-bar">
+              <h3>Tab Bar</h3>
+              <p>The Tab Bar is a horizontal region of buttons or links that allow for a consistent navigation experience between screens. It can contain any combination of text and icons, and is a popular method for enabling mobile navigation.</p>
+              <p>The containing tab bar should have the <code>tab</code> classname, and each tab should have the <code>tab__item</code> classname. By default, tabs will be without an icon and text-only.</p>
+              <pre class="brush: html">
+                <div class="tab">
+                  <a class="tab__item active" href="#">Home</a>
+                  <a class="tab__item" href="#">Favorites</a>
+                  <a class="tab__item" href="#">Setting</a>
+                </div>
+              </pre>
+            </div>
+            <!-- Icon-only Tab Bar Icon Only
+            ================================================== -->
+            <div class="docs-article" id="icon-only">
+              <h3>Icon-only Tab Bar</h3>
+              <p>Add <code>tab__icon--only</code> along with the tabs classname.</p>
+              <pre class="brush: html">
+                <div class="tab tab__icon--only">
+                  <a class="tab__item active" href="#"><i class="icon" data-icon="&amp;#xe02f"></i></a>
+                  <a class="tab__item" href="#"><i class="icon" data-icon="&amp;#xe0da"></i></a>
+                  <a class="tab__item" href="#"><i class="icon" data-icon="&amp;#xe084"></i></a>
+                </div>
+              </pre>
+            </div>
+            <!-- Top Icon Tab Bar Icon Top
+            ================================================== -->
+            <div class="docs-article" id="top-icon">
+              <h3>Top Icon Tab Bar</h3>
+              <p>The classic tab bar. Add <code>tab--iconTop</code> along with the <code>tab</code> classname.</p>
+              <pre class="brush: html">
+                <div class="tab tab--iconTop">
+                  <a class="tab__item active" href="#"><i class="icon" data-icon="&amp;#xe02f"></i>Home</a>
+                  <a class="tab__item" href="#"><i class="icon" data-icon="&amp;#xe0da"></i>Favorites</a>
+                  <a class="tab__item" href="#"><i class="icon" data-icon="&amp;#xe084"></i>Setting</a>
+                </div>
+              </pre>
+            </div>
+            <!-- Top Icon Tab Bar Icon Left
+            ================================================== -->
+            <div class="docs-article" id="left-icon">
+              <h3>Top Icon Tab Bar</h3>
+              <p>Add <code>tab--iconLeft</code> along with the <code>tab</code> classname.</p>
+              <pre class="brush: html">
+                <div class="tab tab--iconLeft">
+                  <a class="tab__item active" href="#"><i class="icon" data-icon="&amp;#xe02f"></i>Home</a>
+                  <a class="tab__item" href="#"><i class="icon" data-icon="&amp;#xe0da"></i>Favorites</a>
+                  <a class="tab__item" href="#"><i class="icon" data-icon="&amp;#xe084"></i>Setting</a>
+                </div>
+              </pre>
+            </div>
+            <!-- Toggle
+            ================================================== -->
+            <div class="docs-article" id="toggle">
+              <h3>Toggle</h3>
+              <p>A toggle technically is the same thing as an HTML checkbox input, except it looks different and is easier to use on a touch device. AngularGap prefers to wrap the checkbox input with the <code>&lt;label&gt;</code> in order to make the entire toggle easy to tap or drag.</p>
+              <pre class="brush: html">
+                <label class="toggle">
+                  <input type="checkbox" />
+                  <span class="handle"></span>
+                </label>
+                ...
+                <label class="toggle">
+                  <input type="radio" />
+                  <span class="handle"></span>
+                </label>
+              </pre>
+            </div>
+            <!-- Checkbox
+            ================================================== -->
+            <div class="docs-article" id="checkbox">
+              <h3>Checkbox</h3>
+              <p>A checkbox is no different than the HTML checkbox input, except it's styled differently. This is an example of multiple checkboxes within a list. Note the <code>list--checkbox</code> class was added along side <code>list__item</code> for each item.</p>
+              <p>AngularGap prefers to use the <code>&lt;label&gt;</code> element for a checkbox item in order to make the entire checkbox tappable.</p>
+              <pre class="brush: html">
+                <label>
+                  HTML5
+                  <input type="checkbox" />
+                  <i class="icon" data-icon="&amp;#xe057"></i>
+                </label>
+              </pre>
+            </div>
+            <!-- Radio
+            ================================================== -->
+            <div class="docs-article" id="radio">
+              <h3>Radio</h3>
+              <p>Radio act no differently as standard radio input elements. Following this convention will display a list of radio buttons similarly seen in modern app.</p>
+              <p>AngularGap prefers to use the <code>&lt;label&gt;</code> element for a radio item in order to make the entire area tappable.</p>
+              <pre class="brush: html">
+                <label>
+                  HTML5
+                  <input type="radio" name="radio" value="HTML5" />
+                  <i class="icon" data-icon="&amp;#xe057"></i>
+                </label>
+              </pre>
+            </div>
+            <!-- Range
+            ================================================== -->
+            <div class="docs-article" id="range">
+              <h3>Range</h3>
+              <p>This is a Range. Ranges can be themed to any default color, and used in various other elements such as a list item.</p>
+              <pre class="brush: html">
+                <div class="range">
+                  <i class="icon" icon-data="&amp;#xe0de"></i>
+                  <input type="range" name="volume">
+                  <i class="icon" icon-data="&amp;#xe0df"></i>
+                </div>
+              </pre>
+            </div>
+            <!-- Spinner
+            ================================================== -->
+            <div class="docs-article" id="spinner">
+              <h3>Spinner</h3>
+              <p>This is a loading animation. Loading text slowly reveals itself over and over while a spinner rotates around in a circle over and over infinitely.</p>
+              <pre class="brush: html">
+                <div class="spinner"></div>
+                <div class="spinner spinner--primary"></div>
+                <div class="spinner spinner--success"></div>
+                <div class="spinner spinner--important"></div>
+              </pre>
+            </div>
+            <!-- Progress
+            ================================================== -->
+            <div class="docs-article" id="progress">
+              <h3>Progress</h3>
+              <p>Progress bars use CSS3 transitions and animations to achieve some of their effects. </p>
+              <pre class="brush: html">
+                <div class="progress">
+                    <div class="bar" style="width: 25%"></div>
+                </div>
+                <div class="progress progress--primary">
+                    <div class="progress__bar" style="width: 45%"></div>
+                </div>
+                <div class="progress progress--success">
+                    <div class="progress__bar" style="width: 65%"></div>
+                </div>
+                <div class="progress progress--important">
+                    <div class="progress__bar" style="width: 85%"></div>
+                </div>
+              </pre>
+            </div>
+            <!-- Masonry
+            ================================================== -->
+            <div class="docs-article" id="masonry">
+              <h3>Masonry</h3>
+              <p>CSS columns. Granted, their purpose is to display text in columns like a newspaper, but their display mode is exactly what’s needed to recreate the Masonry effect. </p>
+              <pre class="brush: html">
+                <ul class="masonry">
+                  <li class="masonry__item"><img src="img/masonry/1.jpg" /></li>
+                  <li class="masonry__item"><img src="img/masonry/2.jpg" /></li>
+                  <li class="masonry__item"><img src="img/masonry/3.jpg" /></li>
+                  <li class="masonry__item"><img src="img/masonry/4.jpg" /></li>
+                  <li class="masonry__item"><img src="img/masonry/5.jpg" /></li>
+                  <li class="masonry__item"><img src="img/masonry/6.jpg" /></li>
+                  <li class="masonry__item"><img src="img/masonry/7.jpg" /></li>
+                  <li class="masonry__item"><img src="img/masonry/8.jpg" /></li>
+                  <li class="masonry__item"><img src="img/masonry/9.jpg" /></li>
+                  <li class="masonry__item"><img src="img/masonry/10.jpg" /></li>
+                </ul>
+              </pre>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!--footer-->
+    <div class="footer">
+      <div class="container">
+        <div class="download">
+          <span class="download__infos">You simply have to <b>try it</b>.</span>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="btn btn-info" href="https://github.com/angulargap/angulargap.github.io/archive/master.zip">Download AngularGap</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="btn" href="documentation.html">Read the Documentation</a>
+        </div>
+        <hr class="dashed" />
+        <div class="row">
+          <div class="col-md-4">
+            <h3>Get involved</h3>
+            <p>AngularGap is hosted on <a href="https://github.com/angulargap/angulargap.github.io" target="_blank" rel="external nofollow">GitHub</a> and open for everyone to contribute. Please give us some feedback and join the development!</p>
+          </div>
+          <div class="col-md-4">
+            <h3>Contribute</h3>
+            <p>You want to help us and participate in the development or the documentation? Just fork AngularGap on <a href="https://github.com/angulargap/angulargap.github.io" target="_blank" rel="external nofollow">GitHub</a> and send us a pull request.</p>
+          </div>
+          <div class="col-md-4">
+            <h3>Found a bug?</h3>
+            <p>Open a <a href="https://github.com/angulargap/angulargap.github.io/issues" target="_blank" rel="external nofollow">new issue</a> on GitHub. Please search for existing issues first and make sure to include all relevant information.</p>
+          </div>
+        </div>
+        <hr class="dashed" />
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Talk to us</h3>
+            <ul>
+              <li>Tweet us at <a href="https://twitter.com/flathemes" target="_blank">@angulargap</a>&nbsp;&nbsp;&nbsp;&nbsp;Email us at <span class="connect">info@flathemes.com</span></li>
+              <li>
+                <a title="Twitter" href="https://twitter.com/flathemes" target="_blank" rel="external nofollow"><i class="icon" data-icon="&#xe121"></i></a>
+                <a title="Facebook" href="https://www.facebook.com/Flathemes" target="_blank" rel="external nofollow"><i class="icon" data-icon="&#xe10b"></i></a>
+                <a title="Google+" href="https://plus.google.com/u/0/" target="_blank" rel="external nofollow"><i class="icon" data-icon="&#xe110"></i></a>
+                <a title="Github" href="https://github.com/angulargap/angulargap.github.io" target="_blank" rel="external nofollow"><i class="icon" data-icon="&#xe10e"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <!-- Begin MailChimp Signup Form -->
+            <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+            <div id="mc_embed_signup">
+            <h3 style="margin-bottom: 15px;">Newsletter</h3>
+            <form action="http://flathemes.us3.list-manage.com/subscribe/post?u=faba9adaea2b85dc9a5c496bd&amp;id=acd08a1b0f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <input style="margin-bottom: 10px;" type="email" value="" name="EMAIL" class="email form-control" id="mce-EMAIL" placeholder="email address" required>
+                <span class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-info"></span>
+            </form>
+            </div>
+            <!--End mc_embed_signup-->
+          </div>
+        </div>
+        <hr class="dashed" />
+        <div class="copyright clearfix">
+          <p><b>AngularGap</b>&nbsp;&nbsp;&nbsp;&nbsp;<a href="getting-started.html">Getting Started</a>&nbsp;&bull;&nbsp;<a href="documentation.html">Documentation</a><!-- &nbsp;&bull;&nbsp;<a href="examples/">Examples</a> --></p>
+          <p>&copy; 2014 AngularGap, Inc. All rights reserved. &nbsp;&nbsp;Code licensed under <a href="http://opensource.org/licenses/mit-license.html" target="_blank" rel="external nofollow">MIT License</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/" rel="external nofollow">CC BY 3.0</a>.</p>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-48011661-1', 'angulargap.github.io');
+      ga('send', 'pageview');
+
+    </script>
+  </body>
+</html>

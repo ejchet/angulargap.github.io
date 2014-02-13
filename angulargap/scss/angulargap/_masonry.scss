@@ -1,0 +1,51 @@
+// Variables
+//------------------------------------------------------
+$masonry-padding:                 10px !default;
+$masonry-margin-bottom:           $masonry-padding / 2 !default;
+$masonry-image-width:             $global-full-width !default;
+$masonry-media-width:             2560px 2048px 1920px 1600px 1280px 1080px 854px 720px 320px !default;
+
+// Mixins
+//------------------------------------------------------
+@mixin masonry-column-count($medias: $masonry-media-width) {
+  @if $medias {
+    $counts: length($medias) + 1; 
+
+    @for $i from 1 to $counts {
+      @media (max-width: nth($medias, $i)) {
+        & {
+          @include prefixer($property: column-count, $value: $counts, $prefixes: webkit moz spec); 
+        }
+      } 
+      $counts: $counts - 1;     
+    }
+  }
+}
+
+// Exports
+//------------------------------------------------------
+@include exports("masonry") {
+
+  /**
+   * masonry
+   * --------------------------------------------------
+   */
+  .masonry {
+    padding: $masonry-padding;
+    @include prefixer($property: column-gap, $value: $masonry-padding, $prefixes: webkit moz spec); 
+
+    @include elements(item) {
+      @include display($value: inline-block);
+      @include position($position: relative);
+      margin-bottom: $masonry-margin-bottom;
+
+      & img {
+        width: $masonry-image-width;       
+      }
+    }
+
+    @include masonry-column-count($medias: $masonry-media-width);
+  }
+}
+
+
