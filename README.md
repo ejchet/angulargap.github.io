@@ -23,6 +23,8 @@ Clean, simple, and functional. AngularGap has been designed to work and display 
 
 ## Manual Start
 
+`bower install angulargap`
+
 The source files are in the `angulargap/` folder. You can just grab the `angulargap/css/`, `angulargap/scss/`, and `angulargap/fonts/` folders and you'll be good to go.
 
 ## Changelog:
@@ -34,6 +36,11 @@ The source files are in the `angulargap/` folder. You can just grab the `angular
 + [AngularGap Home page](http://angulargap.github.io/)
 + [AngularGap Documentation page](http://angulargap.github.io/documentation.html)
 + [AngularIcon Home page](http://angulargap.github.io/angularicons.html)
+
+## Community
+
++ Follow [@angulargap on Twitter](https://twitter.com/flathemes).
++ Have a feature request or find a bug? [Submit an issue](https://github.com/angulargap/angulargap.github.io/issues).
 
 ## LICENSE
 
