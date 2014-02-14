@@ -455,7 +455,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .docs-article.docs--start {
     min-height: 100px;
-    height: auto;
 }
 @media (max-width: 767px) {
     .docs-article, 
@@ -637,4 +636,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     -moz-column-count: 2 !important;   
     column-count: 2 !important;
   }
+}
+/* ----------------------------------
+ * grid
+ * ---------------------------------- */
+.col-demo {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #dbdbdb;
+    background-color: #f2f2f2;
+    text-align: center;
 }

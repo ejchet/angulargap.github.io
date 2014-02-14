@@ -125,6 +125,15 @@
               <li data-target="spinner"><a href="#spinner">Spinner</a></li>
               <li data-target="progress"><a href="#progress">Progress</a></li>
               <li data-target="masonry"><a href="#masonry">Masonry</a></li>
+              <li data-target="grid" >
+                <a href="#grid">Grid</a>
+                <ul>
+                  <li data-target="even-columns"><a href="#even-columns">Evenly Spaced Columns</a></li>
+                  <li data-target="explicit-column-sizes"><a href="#explicit-column-sizes">Explicit Column Sizes</a></li>
+                  <li data-target="offset-columns"><a href="#offset-columns">Offset Columns</a></li>
+                  <li data-target="vertically-aligned"><a href="#vertically-aligned">Vertically Aligned</a></li>
+                </ul>
+              </li>
             </ul>
           </div>
         </div>
@@ -791,6 +800,184 @@
                         </ul>
                       </section>
                     </div>
+                    <!-- example-grid
+                    ================================================== -->
+                    <div class="example" data-type="grid">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Grid</h2>
+                        </div>
+                        <div class="grid">
+                          <div class="col">
+                            <div class="col-demo">.col</div>
+                          </div>
+                          <div class="col">
+                            <div class="col-demo">.col</div>
+                          </div>
+                          <div class="col">
+                            <div class="col-demo">.col</div>
+                          </div>
+                          <div class="col">
+                            <div class="col-demo">.col</div>
+                          </div>
+                        </div>                        
+                        <div class="grid">
+                          <div class="col col-50">
+                            <div class="col-demo">.col</div>
+                          </div>
+                          <div class="col">
+                            <div class="col-demo">.col</div>
+                          </div>
+                          <div class="col">
+                            <div class="col-demo">.col</div>
+                          </div>
+                        </div>                       
+                        <div class="grid">
+                          <div class="col">
+                            <div class="col-demo">.col</div>
+                          </div>
+                          <div class="col">
+                            <div class="col-demo">.col</div>
+                          </div>
+                          <div class="col col-25 col-offset-25">
+                            <div class="col-demo">.col</div>
+                          </div>
+                        </div>                       
+                        <div class="grid">
+                          <div class="col">
+                            <div class="col-demo">Line 1</div>
+                          </div>
+                          <div class="col">
+                            <div class="col-demo">Line 1<br>Line 2<br>Line 3</div>
+                          </div>
+                        </div>                        
+                        <div class="grid">
+                          <div class="col col-top">
+                            <div class="col-demo">Line 1</div>
+                          </div>
+                          <div class="col">
+                            <div class="col-demo">Line 1<br>Line 2<br>Line 3</div>
+                          </div>
+                        </div>                       
+                        <div class="grid">
+                          <div class="col col-center">
+                            <div class="col-demo">Line 1</div>
+                          </div>
+                          <div class="col">
+                            <div class="col-demo">Line 1<br>Line 2<br>Line 3</div>
+                          </div>
+                        </div>                      
+                        <div class="grid">
+                          <div class="col col-bottom">
+                            <div class="col-demo">Line 1</div>
+                          </div>
+                          <div class="col">
+                            <div class="col-demo">Line 1<br>Line 2<br>Line 3</div>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-evenly spaced columns
+                    ================================================== -->
+                    <div class="example" data-type="even-columns">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Evenly Spaced Columns</h2>
+                        </div>
+                        <div class="grid">
+                          <div class="col"><div class="col-demo">.col</div></div>
+                          <div class="col"><div class="col-demo">.col</div></div>
+                          <div class="col"><div class="col-demo">.col</div></div>
+                          <div class="col"><div class="col-demo">.col</div></div>
+                          <div class="col"><div class="col-demo">.col</div></div>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-explicit column sizes
+                    ================================================== -->
+                    <div class="example" data-type="explicit-column-sizes">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Explicit Column Sizes</h2>
+                        </div>
+                        <div class="grid">
+                          <div class="col col--1of2"><div class="col-demo">.col.col--1of2</div></div>
+                          <div class="col"><div class="col-demo">.col</div></div>
+                          <div class="col"><div class="col-demo">.col</div></div>
+                        </div>
+                        <div class="grid">
+                          <div class="col col--2of3"><div class="col-demo">.col.col--2of3</div></div>
+                          <div class="col"><div class="col-demo">.col</div></div>
+                        </div>
+                        <div class="grid">
+                          <div class="col"><div class="col-demo">.col</div></div>
+                          <div class="col col--3of4"><div class="col-demo">.col.col--3of4</div></div>
+                        </div>
+                        <div class="grid">
+                          <div class="col"><div class="col-demo">.col</div></div>
+                          <div class="col"><div class="col-demo">.col</div></div>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-offset-columns
+                    ================================================== -->
+                    <div class="example" data-type="offset-columns">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Offset- Columns</h2>
+                        </div>
+                        <div class="grid">
+                          <div class="col col--1of3 col-offset--1of3"><div class="col-demo">.col</div></div>
+                          <div class="col"><div class="col-demo">.col</div></div>
+                        </div>
+                        <div class="grid">
+                          <div class="col col--1of3"><div class="col-demo">.col</div></div>
+                          <div class="col col--1of3 col-offset--1of3"><div class="col-demo">.col</div></div>
+                        </div>
+                        <div class="grid">
+                          <div class="col col--1of3 col-offset--2of3"><div class="col-demo">.col</div></div>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- example-vertically aligned
+                    ================================================== -->
+                    <div class="example" data-type="vertically-aligned">
+                      <section role="page" type="top">
+                        <div class="bar bar--header">
+                          <h2 class="bar__title">Vertically Aligned</h2>
+                        </div>
+                        <div class="grid">
+                          <div class="col"><div class="col-demo">.col</div></div>
+                          <div class="col"><div class="col-demo">.col</div></div>
+                          <div class="col"><div class="col-demo">.col</div></div>
+                          <div class="col"><div class="col-demo">1<br>2<br>3<br>4</div></div>
+                        </div>
+                        <div class="grid">
+                          <div class="col col--top"><div class="col-demo">.col</div></div>
+                          <div class="col col--center"><div class="col-demo">.col</div></div>
+                          <div class="col col--bottom"><div class="col-demo">.col</div></div>
+                          <div class="col"><div class="col-demo">1<br>2<br>3<br>4</div></div>
+                        </div>
+                        <div class="grid grid--top">
+                          <div class="col"><div class="col-demo">.col</div></div>
+                          <div class="col"><div class="col-demo">.col</div></div>
+                          <div class="col"><div class="col-demo">.col</div></div>
+                          <div class="col"><div class="col-demo">1<br>2<br>3<br>4</div></div>
+                        </div>
+                        <div class="grid grid--center">
+                          <div class="col"><div class="col-demo">.col</div></div>
+                          <div class="col"><div class="col-demo">.col</div></div>
+                          <div class="col"><div class="col-demo">.col</div></div>
+                          <div class="col"><div class="col-demo">1<br>2<br>3<br>4</div></div>
+                        </div>
+                        <div class="grid grid--bottom">
+                          <div class="col"><div class="col-demo">.col</div></div>
+                          <div class="col"><div class="col-demo">.col</div></div>
+                          <div class="col"><div class="col-demo">.col</div></div>
+                          <div class="col"><div class="col-demo">1<br>2<br>3<br>4</div></div>
+                        </div>
+                      </section>
+                    </div>
                   </div>
               </div>
             </div>
@@ -1322,6 +1509,216 @@
                   <li class="masonry__item"><img src="img/masonry/10.jpg" /></li>
                 </ul>
               </pre>
+            </div>
+            <!-- Grid
+            ================================================== -->
+            <div class="docs-article" id="grid">
+              <h3>Grid</h3>
+              <p>
+                AngularGap's grid system is different than most because of its use of the <a href="http://www.w3.org/TR/css3-flexbox/" target="_blank" rel="external nofollow">CSS Flexible Box Layout Module</a> standard. The advantage here is that the devices that AngularGap supports, all support <a href="http://caniuse.com/flexbox" target="_blank" rel="external nofollow">flexbox</a>.
+              </p>
+              <p>
+                Simply add columns you want in a row, and they'll evenly take up the available space. If you want three columns, add three columns, if you want five columns, add five columns. There's no restriction to a 12 column grid, or having to explicitly state how large each column should be. And to add to the crazy, you can vertically align content within each column.
+              </p>
+              <p>
+                Use the <code>grid</code> classname is used to designate, surprise, a row, and <code>col</code> is used for a column. Point is, add the number of columns your layout requires and don't worry about figuring out the percentages because it figures it out automagically.
+              </p>
+              <p>
+                 <em>Note: The borders and gray background in the demo were added so it's easier to see the structure.</em>
+              </p>
+            </div>
+            <!-- Evenly Spaced Columns
+            ================================================== -->
+            <div class="docs-article" id="even-columns">
+              <h3>Evenly Spaced Columns</h3>
+              <p>By default every <code>col</code> added inside a <code>grid</code> will automatically receive an equal amount of the available area. Notice in the code below that no sizes are specified anywhere in the classnames, yet each of the five columns in this example will each evenly take up 20% of the available width (thank you flexbox).</p>
+              <pre class="brush: html">
+                <div class="grid">
+                  <div class="col">.col</div>
+                  <div class="col">.col</div>
+                  <div class="col">.col</div>
+                  <div class="col">.col</div>
+                  <div class="col">.col</div>
+                </div>
+              </pre> 
+              <p><em>Note: The borders and gray background in the demo were added so it's easier to see the structure.</em></p>            
+            </div>
+            <!-- Explicit Column Sizes
+            ================================================== -->
+            <div class="docs-article" id="explicit-column-sizes" style="height: 1240px;">
+              <h3>Evenly Spaced Columns</h3>
+              <p>You <em>can</em> explicitly state the size of a column if for example you'd want specific columns to be larger than the others in the same row. By default each column will evenly take up the available area, but in the case where a column should be a certain size, Angulargap's grid uses a percent system (in contrast to a locked in 12 column grid). </p>
+              <p>An advantage with this grid system is that you only have to state the percentage for the column that needs it, and the others will still evenly divide up the available areas.</p>
+              <pre class="brush: html">
+                <div class="grid">
+                  <div class="col col--1of2">.col.col--1of2</div>
+                  <div class="col">.col</div>
+                  <div class="col">.col</div>
+                </div>
+                <div class="grid">
+                  <div class="col col--2of3">.col.col--2of3</div>
+                  <div class="col">.col</div>
+                </div>
+                <div class="grid">
+                  <div class="col">.col</div>
+                  <div class="col col--3of4">.col.col--3of4</div>
+                </div>
+                <div class="grid">
+                  <div class="col">.col</div>
+                  <div class="col">.col</div>
+                </div>
+              </pre>  
+              <p><em>Note: The borders and gray background in the demo were added so it's easier to see the structure.</em></p> 
+              <table class="table">
+                  <thead>
+                    <tr>
+                      <th colspan="2"><b>Explicit Column Percentage Classnames</b></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th><b>.col--1of10</b></th>
+                      <td>10%</td>
+                    </tr>
+                    <tr>
+                      <th><b>.col--1of5</b></th>
+                      <td>20%</td>
+                    </tr>
+                    <tr>
+                      <th><b>.col--1of4</b></th>
+                      <td>25%</td>
+                    </tr>
+                    <tr>
+                      <th><b>.col--1of3</b></th>
+                      <td>33.3333%</td>
+                    </tr>
+                    <tr>
+                      <th><b>.col--1of2</b></th>
+                      <td>50%</td>
+                    </tr>
+                    <tr>
+                      <th><b>.col--2of3</b></th>
+                      <td>66.6666%</td>
+                    </tr>
+                    <tr>
+                      <th><b>.col--3of4</b></th>
+                      <td>75%</td>
+                    </tr>
+                    <tr>
+                      <th><b>.col--4of5</b></th>
+                      <td>80%</td>
+                    </tr>
+                    <tr>
+                      <th><b>.col--9of10</b></th>
+                      <td>90%</td>
+                    </tr>
+                  </tbody>
+                </table>       
+            </div>
+            <!-- Offset Columns
+            ================================================== -->
+            <div class="docs-article" id="offset-columns" style="height: 900px;">
+              <h3>Offset Columns</h3>
+              <p>Columns can also be offset from the left. We'll let the code and demo speak for itself.</p>
+              <pre class="brush: html">
+                <div class="grid">
+                  <div class="col col--1of3 col-offset--1of3">.col</div>
+                  <div class="col">.col</div>
+                </div>
+                <div class="grid">
+                  <div class="col col--1of3">.col</div>
+                  <div class="col col--1of3 col-offset--1of3">.col</div>
+                </div>
+                <div class="grid">
+                  <div class="col col--1of3 col-offset--2of3">.col</div>
+                </div>
+              </pre>  
+              <p><em>Note: The borders and gray background in the demo were added so it's easier to see the structure.</em></p> 
+              <table class="table">
+                  <thead>
+                    <tr>
+                      <th colspan="2"><b>Offset Column Percentage Classnames</b></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th><b>.col-offset--1of10</b></th>
+                      <td>10%</td>
+                    </tr>
+                    <tr>
+                      <th><b>.col-offset--1of5</b></th>
+                      <td>20%</td>
+                    </tr>
+                    <tr>
+                      <th><b>.col-offset--1of4</b></th>
+                      <td>25%</td>
+                    </tr>
+                    <tr>
+                      <th><b>.col-offset--1of3</b></th>
+                      <td>33.3333%</td>
+                    </tr>
+                    <tr>
+                      <th><b>.col-offset--1of2</b></th>
+                      <td>50%</td>
+                    </tr>
+                    <tr>
+                      <th><b>.col-offset--2of3</b></th>
+                      <td>66.6666%</td>
+                    </tr>
+                    <tr>
+                      <th><b>.col-offset--3of4</b></th>
+                      <td>75%</td>
+                    </tr>
+                    <tr>
+                      <th><b>.col-offset--4of5</b></th>
+                      <td>80%</td>
+                    </tr>
+                    <tr>
+                      <th><b>.col-offset--9of10</b></th>
+                      <td>90%</td>
+                    </tr>
+                  </tbody>
+                </table>       
+            </div>
+            <!-- Vertically Aligned
+            ================================================== -->
+            <div class="docs-article" id="vertically-aligned" style="height: 1000px;">
+              <h3>Vertically Aligned</h3>
+              <p>Another trick up flexbox's sleeve is the ability to easily vertically align columns. Vertical alignment includes top, center and bottom, and can be applied to every column in a row, or to specific columns.</p>
+              <p>In the demo, we've made the last column in each row to have the tallest content in order to demonstrate how the content of the others vertically align. The first row shows the default which is to take the same height as the tallest column in the same row.</p>
+              <pre class="brush: html">
+                <div class="grid">
+                  <div class="col">.col</div>
+                  <div class="col">.col</div>
+                  <div class="col">.col</div>
+                  <div class="col">1<br>2<br>3<br>4</div>
+                </div>
+                <div class="grid">
+                  <div class="col col--top">.col</div>
+                  <div class="col col--center">.col</div>
+                  <div class="col col--bottom">.col</div>
+                  <div class="col">1<br>2<br>3<br>4</div>
+                </div>
+                <div class="grid grid--top">
+                  <div class="col">.col</div>
+                  <div class="col">.col</div>
+                  <div class="col">.col</div>
+                  <div class="col">1<br>2<br>3<br>4</div>
+                </div>
+                <div class="grid grid--center">
+                  <div class="col">.col</div>
+                  <div class="col">.col</div>
+                  <div class="col">.col</div>
+                  <div class="col">1<br>2<br>3<br>4</div>
+                </div>
+                <div class="grid grid--bottom">
+                  <div class="col">.col</div>
+                  <div class="col">.col</div>
+                  <div class="col">.col</div>
+                  <div class="col">1<br>2<br>3<br>4</div>
+                </div>
+              </pre>  
+              <p><em>Note: The borders and gray background in the demo were added so it's easier to see the structure.</em></p>      
             </div>
         </div>
       </div>
