@@ -109,3 +109,19 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .container .icon {
     font-size: 32px;
 }
+/* ----------------------------------
+ * footer
+ * ---------------------------------- */ 
+.footer {
+  margin-top: 40px;
+  padding: 20px 0 40px;
+  border-top: 1px solid #00b086;
+  font-size: 12px;
+}
+.footer a,
+.footer a:hover {
+  color: #00b086;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
