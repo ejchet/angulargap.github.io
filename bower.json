@@ -1,0 +1,27 @@
+{
+  "name": "AngularGap",
+  "version": "0.9.0",
+  "homepage": "http://angulargap.github.io",
+  "authors": [
+    "Dong Xu <angulargap@gmail.com>"
+  ],
+  "description": "AngularGap is a beautiful front-end framework for developing hybrid mobile apps in HTML5.",
+  "main": [
+    "angulargap/css/*",
+    "angulargap/scss/*",
+    "angulargap/fonts/*"
+  ],
+  "keywords": [
+    "mobile",
+    "html5",
+    "angulargap",
+    "bootstrap"
+  ],
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ]
+}
