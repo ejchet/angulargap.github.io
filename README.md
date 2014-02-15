@@ -22,6 +22,7 @@ AngularGap is modeled off of popular native mobile development SDKs, making it e
 Clean, simple, and functional. AngularGap has been designed to work and display beautifully on all current mobile devices. With tons of popular mobile components, typography, interactive paradigms, and a gorgeous (yet extensible) base theme, you'll wonder how you lived without it.
 
 ## Manual Start
+Install with [bower](http://bower.io/)?
 
 `bower install angulargap`
 
