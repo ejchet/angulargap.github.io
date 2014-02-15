@@ -40,7 +40,7 @@ The source files are in the `angulargap/` folder. You can just grab the `angular
 
 ## Community
 
-+ Follow [@angulargap on Twitter](https://twitter.com/flathemes).
++ Follow [@flathemes on Twitter](https://twitter.com/flathemes).
 + Have a feature request or find a bug? [Submit an issue](https://github.com/angulargap/angulargap.github.io/issues).
 
 ## LICENSE

@@ -3,7 +3,7 @@
   "private": false,
   "version": "0.9.0",
   "description": "This is a beautiful front-end framework for developing hybrid mobile apps in HTML5.",
-  "author":"AngularGap",
+  "author":"Flathemes",
   "license": "MIT",
   "devDependencies": {
     "karma": "~0.10",
