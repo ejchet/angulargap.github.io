@@ -74,6 +74,40 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .header a:active {
     color: #31a6a3; 
 }
+.header .download,
+.header .download:hover,
+.header .download:active {
+    color: #fff !important;
+}
+/* ----------------------------------
+ * social
+ * ---------------------------------- */
+.social {
+    position: relative;
+    padding: 20px 0 0;
+    text-align: center;
+}
+.social li {
+    height: 30px;
+    display: inline-block;
+    vertical-align: top;
+}
+.social a {
+    color: #2f9182 !important;   
+}
+.social .github-watch {
+    width: 105px;
+}
+.social .github-fork {
+    width: 105px;
+}
+.social .twitter-share {
+    width: 80px;
+    margin-right: 10px;
+}
+.social .twitter-follow {
+    width: 200px;
+}
 /* ----------------------------------
  * container
  * ---------------------------------- */ 
